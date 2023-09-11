@@ -3,10 +3,9 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "Estimer un bien", href: "#" },
+  { name: "Acheter un bien", href: "#" },
+  { name: "Recommandation", href: "#" },
 ];
 
 export default function Header() {
@@ -15,15 +14,15 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm ">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-6"
         aria-label="Global"
       >
-        <div className="flex lg:flex-1">
+        <div className="flex lg:flex-1 ">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Avenue-immo</span>
             <img
-              className="h-auto w-20"
-              src="/logos/logo.png"
+              className="h-auto w-28"
+              src="/logos/biglogo.png"
               alt="avenue-immo"
             />
           </a>
@@ -43,15 +42,15 @@ export default function Header() {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-sm leading-6 text-gray-500"
             >
               {item.name}
             </a>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
+          <a href="#" className="text-sm leading-6 text-gray-700">
+            Se connecter <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>
@@ -88,7 +87,7 @@ export default function Header() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-500 hover:bg-gray-50"
                   >
                     {item.name}
                   </a>
@@ -97,9 +96,9 @@ export default function Header() {
               <div className="py-6">
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base leading-7 text-gray-700 hover:bg-gray-50"
                 >
-                  Log in
+                  Se connecter
                 </a>
               </div>
             </div>
