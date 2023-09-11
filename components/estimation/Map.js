@@ -103,28 +103,27 @@ const Map = (props) => {
   }, [stateCoordinate]);
 
   return (
-    <div
-      ref={mapContainerRef}
-      className="relative"
-      style={{
-        width: "100%",
-        height: height,
-        borderRadius: "5px",
-        overflow: "hidden",
-      }}
-    >
-      <style jsx>{`
-        .mapboxgl-ctrl-attrib {
-          font-size: 10px !important;
-        }
-      `}</style>
-      {stateCoordinate && showIcon ? (
-        <MapPinIcon
-          className="h-10 w-10 absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-opacity ease-out duration-1000"
-          style={{ color: secondaryColor }}
-        />
-      ) : null}
-    </div>
+    <>
+      <div
+        ref={mapContainerRef}
+        className="relative"
+        style={{
+          width: "100%",
+          height: height,
+          borderRadius: "5px",
+          overflow: "hidden",
+        }}
+      >
+        <style jsx>{`
+          .mapboxgl-ctrl-attrib {
+            font-size: 10px !important;
+          }
+        `}</style>
+        {stateCoordinate && showIcon ? (
+          <MapPinIcon className="h-10 w-10 absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-opacity ease-out duration-1000 text-blue-500" />
+        ) : null}
+      </div>
+    </>
   );
 };
 
