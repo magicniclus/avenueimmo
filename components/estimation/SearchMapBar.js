@@ -94,7 +94,7 @@ const SearchMapBar = ({ map }) => {
 
   return (
     <div className="mb-5">
-      <h2 className="text-lg font-normal mb-3" style={{ color: primaryColor }}>
+      <h2 className="text-lg font-normal mb-3 text-gray-700">
         Adresse du bien à estimer
       </h2>
       <form onSubmit={handleSubmit} className="w-full">
@@ -104,7 +104,7 @@ const SearchMapBar = ({ map }) => {
             value={input}
             onChange={handleInputChange}
             placeholder="Saisir une adresse"
-            className="max-w-[500px] w-[80%] sm:w-[90%] border px-4 py-3 rounded-l-md font-light text-sm outline-none border-blue-500"
+            className="max-w-[500px] w-[80%] sm:w-[90%] border px-4 py-3 rounded-l-md font-light text-sm outline-none border-blue-500 text-gray-700"
             style={{
               color: primaryColor,
               borderColor: secondaryColor,
