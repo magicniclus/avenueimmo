@@ -42,57 +42,10 @@ const PresentationContainer = () => {
       ),
     },
   ];
-  const stateTitle = useSelector((state) => state?.user?.settings?.title);
-  const stateUser = useSelector((state) => state?.user?.userInformation);
-  const stateDescription = useSelector(
-    (state) => state?.user?.settings?.description
-  );
-  const stateDescription2 = useSelector(
-    (state) => state?.user?.settings?.description2
-  );
-  const sanitizedDescription = stateDescription
-    ? DOMPurify.sanitize(stateDescription)
-    : "";
-  const sanitizedDescription2 = stateDescription2
-    ? DOMPurify.sanitize(stateDescription2)
-    : "";
 
-  const stateBackgroundColor = useSelector(
-    (state) => state?.user?.settings?.backgroundColor
-  );
+  const stateUser = useSelector((state) => state?.user?.userInformation);
 
   const primaryColor = useSelector((state) => state?.user?.settings?.fontColor);
-  const secondaryColor = useSelector(
-    (state) => state?.user?.settings?.fontColor2
-  );
-  const stateEntreprise = useSelector(
-    (state) => state?.user?.settings?.entreprise
-  );
-  const stateName = useSelector((state) => state?.user?.settings?.name);
-  const statePhone = useSelector(
-    (state) => state?.user?.userInformation?.phone
-  );
-  const stateProfil = useSelector(
-    (state) => state?.user?.userInformation?.photoProfil
-  );
-  const stateEmail = useSelector(
-    (state) => state?.user?.userInformation?.email
-  );
-  const stateEmailVisible = useSelector(
-    (state) => state?.user?.userInformation?.emailVisible
-  );
-
-  const [email, setEmail] = useState(
-    stateEmailVisible ? stateEmailVisible : stateEmail
-  );
-
-  const [contract, setContract] = useState(
-    useSelector((state) => state?.user?.settings?.contract) || ""
-  ); //user/settings/contract
-
-  useEffect(() => {
-    setEmail(stateEmailVisible ? stateEmailVisible : stateEmail);
-  }, [stateEmailVisible, stateEmail]);
 
   const dispatch = useDispatch();
 
@@ -105,43 +58,20 @@ const PresentationContainer = () => {
 
   return (
     <div
-      className=" h-full w-full lg:w-4/12 flex flex-col justify-between lg:min-h-[600px] lg:mb-0 mb-10"
+      className=" h-full w-full lg:w-4/12 flex flex-col justify-center lg:min-h-[500px] lg:mb-0 mb-10 relative"
       style={{ color: primaryColor }}
     >
-      <div className="flex">
-        {stateProfil ? (
-          <img
-            className="h-12 w-12 rounded-full object-cover"
-            src={stateProfil}
-            alt="profil utilisateur"
-          />
-        ) : (
-          <UserIcon
-            className="h-8 w-8 rounded-full"
-            style={{ color: primaryColor }}
-            aria-hidden="true"
-          />
-        )}
-        <div className="ml-3">
-          <h2 className="font-bold text-lg" style={{ color: secondaryColor }}>
-            {stateName}
-          </h2>
-          <h3 className="font-light text-xs">
-            {contract} {stateEntreprise}
-          </h3>
-        </div>
-      </div>
       <div>
-        <h1 className="text-3xl lg:w-11/12 mt-10 lg:mt-3">
+        <h1 className="lg:text-6xl text-4xl lg:w-11/12 mt-10 lg:mt-3 text-gray-700">
           Estimez votre bien en ligne{" "}
-          <span className="font-bold" style={{ color: secondaryColor }}>
+          <span className="inline bg-gradient-to-r from-blue-300 via-blue-500 to-blue-300 bg-clip-text font-display font-bold tracking-tight text-transparent min-h-max">
             gratuitement
           </span>
           .
         </h1>
-        <ul className="mt-3">
+        <ul className="mt-5">
           {avantages.map((avantage, index) => (
-            <li className="flex items-center mb-1.5" key={index}>
+            <li className="flex items-center mb-1.5 text-gray-500" key={index}>
               {avantage.icon}
               <p className="ml-3 font-light text-[10px]">{avantage.title}</p>
             </li>
@@ -149,43 +79,28 @@ const PresentationContainer = () => {
         </ul>
       </div>
       <div
-        className="text-normal w-11/12 mt-10 lg:mt-3"
-        dangerouslySetInnerHTML={{ __html: sanitizedDescription }}
-      />
-      <div
-        className="font-normal w-11/12 mb-10 mt-10 lg:mt-0"
-        dangerouslySetInnerHTML={{ __html: sanitizedDescription2 }}
-      />
-      <div className="">
-        {statePhone !== "" ||
-        statePhone !== undefined ||
-        statePhone !== null ? (
-          <a className="flex mb-2" href={`tel:${statePhone}`}>
-            <PhoneIcon className="mr-3 w-5" />
-            <p className="font-normal text-sm">{statePhone}</p>
-          </a>
-        ) : null}
-        <a className="flex" href={`mailto:${email}`}>
-          <EnvelopeIcon className="mr-3 w-5" />
-          <p className="font-normal text-sm">{email}</p>
-        </a>
-      </div>
-      <div className="items-center  mt-5 lg:mt-0 lg:mb-0 mb-5 lg:flex hidden">
-        <a
-          className="font-light text-xs"
-          style={{ color: secondaryColor }}
-          href="#"
+        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        aria-hidden="true"
+      >
+        <div
+          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          aria-hidden="true"
         >
-          Paramètre et cookies
-        </a>
-        <div className="ml-3">|</div>
-        <a
-          className="font-light text-xs ml-3"
-          style={{ color: secondaryColor }}
-          href="#"
-        >
-          Signaler un abus
-        </a>
+          <div
+            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#93c5fd] to-[#9089fc] opacity-40 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            style={{
+              clipPath:
+                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+            }}
+          />
+        </div>
+        <div
+          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#93c5fd] to-[#9089fc] opacity-40 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+          style={{
+            clipPath:
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+          }}
+        />
       </div>
     </div>
   );
