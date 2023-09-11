@@ -3,13 +3,13 @@ import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: "estiimea.firebaseapp.com",
+  authDomain: "avenue-immo.firebaseapp.com",
   databaseURL:
-    "https://estiimea-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "estiimea",
-  storageBucket: "estiimea.appspot.com",
-  messagingSenderId: "479567715320",
-  appId: "1:479567715320:web:d77426f290f63e0d04940d",
+    "https://avenue-immo-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "avenue-immo",
+  storageBucket: "avenue-immo.appspot.com",
+  messagingSenderId: "1095138669993",
+  appId: "1:1095138669993:web:124e0ff01a333b191d80b8",
 };
 
 // Initialize Firebase
