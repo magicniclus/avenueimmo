@@ -104,7 +104,7 @@ const SearchMapBar = ({ map }) => {
             value={input}
             onChange={handleInputChange}
             placeholder="Saisir une adresse"
-            className="max-w-[500px] w-[80%] sm:w-[90%] border px-4 py-3 rounded-l-md font-light text-sm outline-none"
+            className="max-w-[500px] w-[80%] sm:w-[90%] border px-4 py-3 rounded-l-md font-light text-sm outline-none border-blue-500"
             style={{
               color: primaryColor,
               borderColor: secondaryColor,
@@ -113,7 +113,7 @@ const SearchMapBar = ({ map }) => {
             }}
           />
           <div
-            className="w-[20%] sm:w-[10%]  max-w-[50px] flex items-center justify-center rounded-r-md"
+            className="w-[20%] sm:w-[10%]  max-w-[50px] flex items-center justify-center rounded-r-md bg-blue-500"
             style={{ backgroundColor: secondaryColor }}
           >
             <MapPinIcon className="h-6 w-6 text-white" aria-hidden="true" />
@@ -124,7 +124,6 @@ const SearchMapBar = ({ map }) => {
                 key={suggestion.id}
                 onClick={() => handleSuggestionClick(suggestion)}
                 className="cursor-pointer bg-white hover:rounded-md hover:bg-gray-100 transition ease-in-out duration-100 px-4 py-2 font-light"
-                style={{ color: primaryColor }}
               >
                 {suggestion.place_name}
               </li>
@@ -135,7 +134,7 @@ const SearchMapBar = ({ map }) => {
         <button
           type="submit"
           disabled={disabled || isDashboard}
-          className={`text-white py-2 px-8 rounded-lg transition ease-in-out duration-100 ${
+          className={`text-white py-2 px-8 rounded-lg transition ease-in-out duration-100 bg-blue-500 ${
             disabled ? "" : "hover:shadow-md"
           }`}
           style={
