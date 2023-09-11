@@ -32,30 +32,19 @@ const Estimation = () => {
         </div>
       )}
       <PresentationContainer />
-      <div className="w-0.5 min-h-[600px] bg-gray-100 lg:flex hidden" />
+      {/* <div className="w-0.5 min-h-[600px] bg-gray-100 lg:flex hidden" /> */}
       <div className="w-9/12 h-0.5 bg-gray-100 lg:hidden flex mb-7 mt-0" />
-      <div className="w-full lg:w-6/12 min-h-[400px]  lg:min-h-[600px] h-full flex flex-col justify-around">
+      <div className="w-full lg:w-6/12 min-h-[400px]  lg:min-h-[500px] h-full flex flex-col justify-around">
         <SearchMapBar />
-        <Map />
-      </div>
-      <div className="flex items-center  mt-5 lg:mt-0 lg:mb-0 mb-5 lg:hidden">
-        <a
-          className="font-light text-xs"
-          style={{ color: secondaryColor }}
-          href={isDashboard ? "#" : "YOUR_LINK_HERE"}
-          onClick={(e) => isDashboard && e.preventDefault()}
-        >
-          Paramètre et cookies
-        </a>
-        <div className="ml-3">|</div>
-        <a
-          className="font-light text-xs ml-3"
-          style={{ color: secondaryColor }}
-          href={isDashboard ? "#" : "YOUR_LINK_HERE"}
-          onClick={(e) => isDashboard && e.preventDefault()}
-        >
-          Signaler un abus
-        </a>
+        <div>
+          <Map />
+          <a
+            href="#"
+            className="text-gray-400 font-light text-xs hover:scale-105 transition ease-out"
+          >
+            Propulsé par Estimmea
+          </a>
+        </div>
       </div>
     </ContainerEstimation>
   );
