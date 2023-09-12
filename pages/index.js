@@ -7,6 +7,8 @@ import EvaluationBanner from "../components/banner/EvaluationBanner";
 import Faq from "../components/faqs/Faq";
 import ImageBanner from "../components/banner/ImageBanner";
 import Footer from "../components/footer/Footer";
+import ServiceBanner from "../components/banner/ServiceBanner";
+import CTABanner from "../components/banner/CTABanner";
 
 const Accueil = () => {
   return (
@@ -18,7 +20,9 @@ const Accueil = () => {
         </EstimationLayout>
         <Breadrumb list={["ACCUEIL", "ESTIMATION"]} />
         <EvaluationBanner />
+        <ServiceBanner />
         <Faq />
+        <CTABanner />
         {/* <ImageBanner /> */}
       </main>
       <Footer />
