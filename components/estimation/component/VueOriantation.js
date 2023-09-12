@@ -35,15 +35,12 @@ const VueOriantation = () => {
   };
   return (
     <div>
-      <h2
-        className="text-2xl font-light lg:my-0 my-5"
-        style={{ color: secondaryColor }}
-      >
+      <h2 className="text-2xl font-light lg:my-0 my-5 text-gray-700">
         Quelle est la vue et l'orientation de votre bien ?
       </h2>
       <div className="mt-5">
         <div className="flex flex-col">
-          <h3 className="font-light text-sm " style={{ color: primaryColor }}>
+          <h3 className="font-light text-sm text-gray-700">
             Vue de votre bien :
           </h3>
           <div className="w-full max-w-[370px] flex flex-wrap xs:justify-between  ">
@@ -65,7 +62,7 @@ const VueOriantation = () => {
           </div>
         </div>
         <div className="flex flex-col mt-5">
-          <h3 className="font-light text-sm" style={{ primaryColor }}>
+          <h3 className="font-light text-sm text-gray">
             Oriantation de votre bien :
           </h3>
           <div className="w-full flex flex-wrap xs:justify-between max-w-[500px]">
