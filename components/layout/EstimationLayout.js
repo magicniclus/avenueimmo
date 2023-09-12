@@ -38,9 +38,9 @@ const EstimationLayout = (props) => {
   }, [slug, userState]); // Assurez-vous que 'slug' est une dépendance
 
   return (
-    <main className="w-full flex justify-center items-center">
+    <div className="w-full flex justify-center items-center">
       {props.children}
-    </main>
+    </div>
   );
 };
 
