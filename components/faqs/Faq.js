@@ -76,7 +76,7 @@ const Faq = () => {
       <div className="mx-auto max-w-[1250px] px-6 lg:px-8 mt-10 mb-20">
         <div className="mx-auto max-w-[1250px]  divide-y divide-gray-700/10">
           <h2 className="text-2xl leading-10 tracking-tight text-gray-700">
-            Question fréqeuntes
+            Questions fréquentes
           </h2>
           <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
             {faqs.map((faq) => (
