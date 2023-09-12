@@ -89,7 +89,7 @@ const SearchMapBar = ({ map }) => {
       type: "SET_CLIENT_INFORMATION",
       payload: { adresse: input, coordinates: coordinates },
     });
-    router.push(`${router.asPath}/estimation`);
+    router.push(`/estimation`);
   };
 
   return (
