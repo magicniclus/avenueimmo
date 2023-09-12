@@ -21,11 +21,6 @@ const NiveauxEtage = () => {
   ];
   const dispatch = useDispatch();
 
-  const primaryColor = useSelector((state) => state?.user?.settings?.fontColor);
-  const secondaryColor = useSelector(
-    (state) => state?.user?.settings?.fontColor2
-  );
-
   const type = useSelector((state) => state?.clientInfomation?.type);
   const [valueNiveaux, setValueNiveaux] = useState(0);
   const [valueEtages, setValueEtages] = useState(0);
@@ -44,28 +39,19 @@ const NiveauxEtage = () => {
   }, [valueNiveaux, valueEtages]);
   return (
     <>
-      <h2
-        className="text-2xl font-light lg:my-0 my-5"
-        style={{ color: secondaryColor }}
-      >
+      <h2 className="text-2xl font-light lg:my-0 my-5 text-gray-700">
         Étages de votre bien :
       </h2>
       {type === "Appartement" ? (
         <div className="mt-5">
           <div className="flex flex-col">
-            <h3
-              className="font-light text-sm mb-3"
-              style={{ color: primaryColor }}
-            >
+            <h3 className="font-light text-sm mb-3 text-gray-700">
               À quel étage se situe votre appartement ?
             </h3>
             <SelectWithIcon options={optionsEtage} onChange={setValueEtages} />
           </div>
           <div className="flex flex-col mt-5">
-            <h3
-              className="font-light text-sm mb-3"
-              style={{ color: primaryColor }}
-            >
+            <h3 className="font-light text-sm mb-3 text-gray-700">
               Combien de niveaux possède votre appartement ?
             </h3>
             <SelectWithIcon
@@ -76,10 +62,7 @@ const NiveauxEtage = () => {
         </div>
       ) : (
         <div className="flex flex-col">
-          <h3
-            className="font-light text-sm mb-3"
-            style={{ color: primaryColor }}
-          >
+          <h3 className="font-light text-sm mb-3 text-gray-700">
             Combien de niveaux possède votre maison ?
           </h3>
           <SelectWithIcon options={optionsNiveaux} onChange={setValueNiveaux} />
