@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CardWithSize from "./CardWithSize";
-import { set } from "firebase/database";
 
 const Atouts = () => {
   const dispatch = useDispatch();
-  const primaryColor = useSelector((state) => state?.user?.settings?.fontColor);
-  const secondaryColor = useSelector(
-    (state) => state?.user?.settings?.fontColor2
-  );
   const [parking, setParking] = useState(null);
   const [box, setBox] = useState(null);
   const [piscine, setPiscine] = useState(null);
@@ -32,10 +27,7 @@ const Atouts = () => {
 
   return (
     <div>
-      <h2
-        className="text-2xl font-light lg:my-0 my-5 w-full max-w-[350px]"
-        style={{ color: secondaryColor }}
-      >
+      <h2 className="text-2xl font-light lg:my-0 my-5 w-full max-w-[350px] text-gray-700">
         Espaces exterieurs de votre bien:
       </h2>
       <div className="flex w-full xs:justify-between justify-start flex-wrap max-w-[400px] mt-5">
