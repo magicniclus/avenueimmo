@@ -18,10 +18,7 @@ const NbrChambres = () => {
   }, [value]);
   return (
     <>
-      <h2
-        className="text-2xl font-light lg:my-0 my-5"
-        style={{ color: secondaryColor }}
-      >
+      <h2 className="text-2xl font-light lg:my-0 my-5 text-gray-700">
         Nombre de chambre de votre bien :
       </h2>
       <div className="flex">
