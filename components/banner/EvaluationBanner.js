@@ -13,7 +13,7 @@ const EvaluationBanner = () => {
           <span className="text-blue-500">gratuitement son bien immoblier</span>{" "}
           ?{" "}
         </h1>
-        <div className="bg-yellow-500 w-20 h-2 rounded-full mt-5"></div>
+        é
         <p className="text-gray-500 text-xs md:text-base font-light w-6/6 mt-5">
           La localisation joue un rôle primordial dans l&apos;évaluation de la
           valeur d&apos;un bien immobilier. Que ce soit dans une rue paisible à
