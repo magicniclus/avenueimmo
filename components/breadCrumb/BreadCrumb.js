@@ -6,7 +6,7 @@ const Breadrumb = (props) => {
   const style = "text-blue-500 text-xs font-bold";
 
   return (
-    <div className="lg:w-full sm:w-11/12 w-full max-w-[1250px] py-10 md:py-16 mx-auto">
+    <div className="lg:w-full sm:w-11/12 w-full max-w-[1250px] py-10 mx-auto">
       <div className="px-5">
         <div className="flex">
           {list.map((item, idx) => {
