@@ -4,7 +4,6 @@ import CardWithoutSize from "./CardWithoutSize";
 
 const Travaux = () => {
   const dispatch = useDispatch();
-  const primaryColor = useSelector((state) => state?.user?.settings?.fontColor);
   const secondaryColor = useSelector(
     (state) => state?.user?.settings?.fontColor2
   );
@@ -24,10 +23,7 @@ const Travaux = () => {
   }, [selectedTravaux]);
   return (
     <div>
-      <h2
-        className="text-2xl font-light lg:my-0 my-5"
-        style={{ color: secondaryColor }}
-      >
+      <h2 className="text-2xl font-light lg:my-0 my-5 text-gray-700">
         Des travaux sont à prévoir dans votre bien ?
       </h2>
       <div className="mt-5 flex flex-wrap">
