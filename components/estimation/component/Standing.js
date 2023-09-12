@@ -5,10 +5,6 @@ import CardWithoutSize from "./CardWithoutSize";
 const Standing = () => {
   const [selectedCard, setSelectedCard] = useState("");
   const dispatch = useDispatch();
-  const primaryColor = useSelector((state) => state?.user?.settings?.fontColor);
-  const secondaryColor = useSelector(
-    (state) => state?.user?.settings?.fontColor2
-  );
 
   useEffect(() => {
     dispatch({
@@ -21,7 +17,7 @@ const Standing = () => {
     <>
       <h2
         className="text-2xl font-light lg:my-0 my-5 w-full max-w-[350px]"
-        style={{ color: secondaryColor }}
+        style={{ color: "#3b82f6" }}
       >
         Quel est le standing de votre bien:
       </h2>
