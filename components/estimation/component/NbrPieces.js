@@ -14,7 +14,7 @@ const NbrPieces = () => {
   }, [value]);
   return (
     <>
-      <h2 className="text-2xl font-light lg:my-0 my-5 w-full max-w-[350px] text-gray-700">
+      <h2 className="text-2xl font-light lg:my-0 my-5 w-full max-w-[350px] text-blue-500">
         Nombre de pièce de votre bien :
       </h2>
       <div className="flex">
