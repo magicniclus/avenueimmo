@@ -73,10 +73,10 @@ const faqs = [
 const Faq = () => {
   return (
     <div className="bg-white w-full">
-      <div className="mx-auto max-w-[1250px] px-6 lg:px-8 mt-10 mb-20">
+      <div className="mx-auto max-w-[1250px] px-6 lg:px-8 mt-20">
         <div className="mx-auto max-w-[1250px]  divide-y divide-gray-700/10">
-          <h2 className="text-2xl leading-10 tracking-tight text-gray-700">
-            Questions fréquentes
+          <h2 className="text-2xl md:text-4xl text-gray-700 md:w-10/12">
+            Questions fréquentes :
           </h2>
           <dl className="mt-10 space-y-6 divide-y divide-gray-900/10">
             {faqs.map((faq) => (
