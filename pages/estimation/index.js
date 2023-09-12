@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import EstimationLayout from "../../components/layout/EstimationLayout";
 import ContainerEstimationTwo from "../../components/layout/ContainerEstimationTwo";
-import UserInformation from "../../components/estimation/UserInformation";
 import EtapeEstimationContainer from "../../components/estimation/EtapeEstimationContainer";
 import { useSelector } from "react-redux";
 import EstimationManager from "../../components/estimation/EstimationManager";
@@ -37,8 +36,7 @@ const index = () => {
               <Loader />
             </div>
           )}
-          <div className="lg:min-h-[600px] flex flex-col justify-between  w-full lg:w-4/12">
-            {/* <UserInformation /> */}
+          <div className=" flex flex-col justify-between  w-full lg:w-4/12">
             <EtapeEstimationContainer />
             <div>
               <p className="text-xs font-light text-gray-400 mt-5">
