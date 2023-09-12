@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import CardWithSize from "./CardWithSize";
 
 const EspacesExterieurs = () => {
   const dispatch = useDispatch();
-  const primaryColor = useSelector((state) => state?.user?.settings?.fontColor);
-  const secondaryColor = useSelector(
-    (state) => state?.user?.settings?.fontColor2
-  );
   const [selectedGarden, setSelectedGarden] = useState(null);
   const [selectedTerrasse, setSelectedTerrasse] = useState(null);
   const [selectedBalcon, setSelectedBalcon] = useState(null);
@@ -50,10 +46,7 @@ const EspacesExterieurs = () => {
 
   return (
     <>
-      <h2
-        className="text-2xl font-light lg:my-0 my-5 w-full max-w-[350px]"
-        style={{ color: secondaryColor }}
-      >
+      <h2 className="text-2xl font-light lg:my-0 my-5 w-full max-w-[350px] text-gray-700">
         Espaces exterieurs de votre bien:
       </h2>
       <div className="flex w-full lg:justify-between flex-wrap max-w-[400px]">
