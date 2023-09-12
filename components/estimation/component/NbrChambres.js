@@ -18,7 +18,7 @@ const NbrChambres = () => {
   }, [value]);
   return (
     <>
-      <h2 className="text-2xl font-light lg:my-0 my-5 text-gray-700">
+      <h2 className="text-2xl font-light lg:my-0 my-5 text-blue-500">
         Nombre de chambre de votre bien :
       </h2>
       <div className="flex">
