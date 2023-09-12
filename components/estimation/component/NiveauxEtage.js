@@ -39,7 +39,7 @@ const NiveauxEtage = () => {
   }, [valueNiveaux, valueEtages]);
   return (
     <>
-      <h2 className="text-2xl font-light lg:my-0 my-5 text-gray-700">
+      <h2 className="text-2xl font-light lg:my-0 my-5 text-blue-500">
         Étages de votre bien :
       </h2>
       {type === "Appartement" ? (
