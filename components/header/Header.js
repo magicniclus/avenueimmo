@@ -22,7 +22,7 @@ export default function Header() {
             <span className="sr-only">Avenue-immo</span>
             <img
               className="h-auto w-28"
-              src="/logos/biglogo.png"
+              src="/logos/biglogoFive.png"
               alt="avenue-immo"
             />
           </a>
