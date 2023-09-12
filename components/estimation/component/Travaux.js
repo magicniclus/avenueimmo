@@ -23,7 +23,7 @@ const Travaux = () => {
   }, [selectedTravaux]);
   return (
     <div>
-      <h2 className="text-2xl font-light lg:my-0 my-5 text-gray-700">
+      <h2 className="text-2xl font-light lg:my-0 my-5 text-blue-500">
         Des travaux sont à prévoir dans votre bien ?
       </h2>
       <div className="mt-5 flex flex-wrap">
