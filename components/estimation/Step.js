@@ -178,7 +178,7 @@ const Step = () => {
           type="button"
           className={`text-white py-1.5 px-5 rounded-full transition ease-in-out duration-100 w-max`}
           style={{
-            backgroundColor: secondaryColor,
+            backgroundColor: "#3b82f6",
             opacity: isButtonDisabled() ? 0.6 : 1,
           }}
           onClick={(e) => (step === 14 ? handleRoute(e) : handleStep())}
