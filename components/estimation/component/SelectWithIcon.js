@@ -1,16 +1,10 @@
 import React, { useState } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
-import { useSelector } from "react-redux";
 
 const SelectWithIcon = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState("Sélectionné une valeur");
   const options = props.options || [];
-
-  const primaryColor = useSelector((state) => state?.user?.settings?.fontColor);
-  const secondaryColor = useSelector(
-    (state) => state?.user?.settings?.fontColor2
-  );
 
   const handleSelectChange = (value) => {
     setSelectedValue(value);
@@ -28,14 +22,14 @@ const SelectWithIcon = (props) => {
       onClick={() => setIsOpen(!isOpen)}
     >
       <div
-        className="ax-w-[500px] w-[80%] sm:w-[90%] border px-4 py-3 rounded-l-md font-light text-sm cursor-pointer"
-        style={{ color: primaryColor, borderColor: secondaryColor }}
+        className="ax-w-[500px] w-[80%] sm:w-[90%] border px-4 py-3 rounded-l-md font-light text-sm cursor-pointer text-gray-700"
+        style={{ borderColor: "#3b82f6" }}
       >
         {selectedValue}
       </div>
       <div
         className="w-[20%] sm:w-[10%] max-w-[50px] flex items-center justify-center rounded-r-md "
-        style={{ backgroundColor: secondaryColor }}
+        style={{ backgroundColor: "#3b82f6" }}
       >
         {isOpen ? (
           <ChevronUpIcon className="h-6 w-6 text-white" />
@@ -52,8 +46,7 @@ const SelectWithIcon = (props) => {
           {options.map((option, index) => (
             <div
               key={index}
-              className={`font-light cursor-pointer px-4 py-2 bg-white hover:rounded-md hover:bg-gray-100 transition ease-in-out duration-100`}
-              style={{ color: primaryColor }}
+              className={`font-light cursor-pointer px-4 py-2 bg-white hover:rounded-md hover:bg-gray-100 transition ease-in-out duration-100 text-gray-700`}
               onClick={() => handleSelectChange(option)}
             >
               {option}
