@@ -56,10 +56,7 @@ const AnalyseLoader = () => {
 
   return (
     <div className="w-full lg:w-6/12 min-h-[400px] lg:min-h-[600px] flex flex-col justify-center lg:items-center">
-      <h2
-        className="text-2xl lg:my-0 my-5 lg:text-center"
-        style={{ color: secondaryColor }}
-      >
+      <h2 className="text-2xl lg:my-0 my-5 lg:text-center text-blue-500">
         Analyse en cours...
       </h2>
       <div className="mt-5">
@@ -70,9 +67,8 @@ const AnalyseLoader = () => {
             <LittleLoader />
           )}
           <p
-            className="ml-3"
+            className="ml-3 text-gray-700"
             style={{
-              color: primaryColor,
               opacity: showCheckIcon ? "1" : "0.8",
             }}
           >
@@ -86,9 +82,8 @@ const AnalyseLoader = () => {
             <LittleLoader />
           )}
           <p
-            className="ml-3"
+            className="ml-3 text-gray-700"
             style={{
-              color: primaryColor,
               opacity: showCheckIconTwo ? "1" : "0.8",
             }}
           >
@@ -102,9 +97,8 @@ const AnalyseLoader = () => {
             <LittleLoader />
           )}
           <p
-            className="ml-3"
+            className="ml-3 text-gray-700"
             style={{
-              color: primaryColor,
               opacity: showCheckIconThree ? "1" : "0.8",
             }}
           >
