@@ -27,8 +27,8 @@ const Atouts = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-light lg:my-0 my-5 w-full max-w-[350px] text-gray-700">
-        Espaces exterieurs de votre bien:
+      <h2 className="text-2xl font-light lg:my-0 my-5 w-full max-w-[350px] text-blue-500">
+        Les atouts de votre bien:
       </h2>
       <div className="flex w-full xs:justify-between justify-start flex-wrap max-w-[400px] mt-5">
         <CardWithSize
