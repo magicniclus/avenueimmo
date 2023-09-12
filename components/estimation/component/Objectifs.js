@@ -25,7 +25,7 @@ const Objectifs = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-light lg:my-0 my-5">
+      <h2 className="text-2xl font-light lg:my-0 my-5 text-blue-500">
         Quels sont vos objectifs ?
       </h2>
       <div className="mt-5">
