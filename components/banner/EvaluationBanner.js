@@ -6,14 +6,13 @@ import React from "react";
 
 const EvaluationBanner = () => {
   return (
-    <div className="w-full px-5 lg:flex lg:justify-between  max-w-[1250px] mx-auto">
+    <section className="w-full px-5 lg:flex lg:justify-between items-center  max-w-[1250px] mx-auto">
       <div className=" lg:w-7/12">
         <h1 className="text-2xl md:text-4xl text-gray-700 md:w-10/12">
           Comment évaluer{" "}
           <span className="text-blue-500">gratuitement son bien immoblier</span>{" "}
           ?{" "}
         </h1>
-        é
         <p className="text-gray-500 text-xs md:text-base font-light w-6/6 mt-5">
           La localisation joue un rôle primordial dans l&apos;évaluation de la
           valeur d&apos;un bien immobilier. Que ce soit dans une rue paisible à
@@ -43,7 +42,7 @@ const EvaluationBanner = () => {
           officielles en temps réel.
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 
