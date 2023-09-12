@@ -35,7 +35,7 @@ const VueOriantation = () => {
   };
   return (
     <div>
-      <h2 className="text-2xl font-light lg:my-0 my-5 text-gray-700">
+      <h2 className="text-2xl font-light lg:my-0 my-5 text-blue-500">
         Quelle est la vue et l'orientation de votre bien ?
       </h2>
       <div className="mt-5">
