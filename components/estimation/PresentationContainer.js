@@ -1,16 +1,6 @@
-import {
-  ChartBarIcon,
-  CheckBadgeIcon,
-  CheckIcon,
-  ClockIcon,
-  CloudIcon,
-  EnvelopeIcon,
-  PhoneIcon,
-} from "@heroicons/react/20/solid";
-import { UserIcon } from "@heroicons/react/24/outline";
-import React, { useEffect, useState } from "react";
+import { CheckBadgeIcon } from "@heroicons/react/20/solid";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import DOMPurify from "dompurify";
 
 const PresentationContainer = () => {
   const avantages = [
@@ -64,11 +54,13 @@ const PresentationContainer = () => {
       <div>
         <h1 className="lg:text-6xl text-4xl lg:w-11/12 mt-10 lg:mt-3 text-gray-700">
           Estimez votre bien en ligne{" "}
-          <span className="inline bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 bg-clip-text font-display font-bold tracking-tight text-transparent min-h-max">
+          <span className="inline bg-gradient-to-r from-blue-300 via-blue-500 to-blue-300 bg-clip-text font-display font-bold tracking-tight text-transparent min-h-max">
             gratuitement
           </span>
           .
         </h1>
+
+        <div className="bg-yellow-500 w-20 h-2 rounded-full my-5"></div>
         <ul className="mt-5">
           {avantages.map((avantage, index) => (
             <li className="flex items-center mb-1.5 text-gray-500" key={index}>
@@ -78,7 +70,7 @@ const PresentationContainer = () => {
           ))}
         </ul>
       </div>
-      <div
+      {/* <div
         className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
         aria-hidden="true"
       >
@@ -101,7 +93,7 @@ const PresentationContainer = () => {
               "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
           }}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
