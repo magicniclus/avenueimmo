@@ -19,11 +19,6 @@ import Objectifs from "./component/Objectifs";
 
 const Step = () => {
   const [error, setError] = useState(null);
-
-  const primaryColor = useSelector((state) => state?.user?.settings?.fontColor);
-  const secondaryColor = useSelector(
-    (state) => state?.user?.settings?.fontColor2
-  );
   const step = useSelector((state) => state?.stepInProgress);
 
   const type = useSelector((state) => state?.clientInfomation?.type);
@@ -56,7 +51,7 @@ const Step = () => {
 
   const handleRoute = (e) => {
     e.preventDefault();
-    router.push(`/${currentSlug}/estimation/analyse`);
+    router.push(`/estimation/analyse`);
   };
 
   const handleComponent = () => {
