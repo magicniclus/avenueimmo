@@ -38,7 +38,7 @@ const index = () => {
           )}
           <div className=" flex flex-col justify-between  w-full lg:w-4/12">
             <EtapeEstimationContainer />
-            <div>
+            <div className="lg:block hidden">
               <p className="text-xs font-light text-gray-400 mt-5">
                 *Le resultat de cette estimation ne remplace pas une estimation
                 réelle. Nos algorythmes sont en perpétuelles évolution afin de
@@ -47,7 +47,7 @@ const index = () => {
             </div>
           </div>
           <div className="w-0.5 min-h-[600px] bg-gray-100 lg:flex hidden" />
-          <div className="w-full h-0.5 bg-gray-100 lg:hidden flex mt-7 lg:mt-0" />
+          {/* <div className="w-full h-0.5 bg-gray-100 lg:hidden flex mt-7 lg:mt-0" /> */}
           <EstimationManager />
         </ContainerEstimationTwo>
       </EstimationLayout>
