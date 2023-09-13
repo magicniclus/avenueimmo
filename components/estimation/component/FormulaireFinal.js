@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { useRouter } from "next/router";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const FormulaireFinal = () => {
   const namePattern = /^[a-zA-Z]{2,}$/;
@@ -13,14 +13,6 @@ const FormulaireFinal = () => {
   const [lastName, setLastName] = useState(""); // <- state pour le nom
   const [email, setEmail] = useState(""); // <- state pour l'email
   const [phone, setPhone] = useState(""); // <- state pour le téléphone
-
-  const primaryColor = useSelector((state) => state?.user?.settings?.fontColor);
-  const secondaryColor = useSelector(
-    (state) => state?.user?.settings?.fontColor2
-  );
-  const clientInfomation = useSelector(
-    (state) => state?.clientInformation?.settings
-  );
 
   const dispatch = useDispatch();
 
@@ -65,8 +57,6 @@ const FormulaireFinal = () => {
   };
 
   const router = useRouter();
-  const pathSegments = router.asPath.split("/");
-  const currentSlug = pathSegments[1];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -80,13 +70,13 @@ const FormulaireFinal = () => {
           phone,
         },
       });
-      router.push(`/${currentSlug}/estimation/resultat`);
+      router.push(`/estimation/resultat`);
     }
   };
 
   return (
     <form onSubmit={handleSubmit} method="POST" className="w-full">
-      <div className="lg:mt-5 mt-10 mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
+      <div className="lg:mt-5 mx-auto max-w-xl lg:mr-0 lg:max-w-lg lg:mb-0 mb-10">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label
@@ -183,10 +173,7 @@ const FormulaireFinal = () => {
                 checked={isChecked}
                 onChange={() => setIsChecked(!isChecked)}
               />
-              <span
-                className="ml-2 text-xs lg:w-4/6"
-                style={{ color: primaryColor }}
-              >
+              <span className="ml-2 text-xs lg:w-4/6 text-gray-700">
                 J'accepte les{" "}
                 <a href="/path-to-gdpr" className="underline">
                   termes et conditions GDPR
@@ -200,8 +187,7 @@ const FormulaireFinal = () => {
           </div>
           <button
             type="submit"
-            className="rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 max-w-[170px] w-full"
-            style={{ backgroundColor: secondaryColor }}
+            className="rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 max-w-[170px] w-full bg-blue-500"
           >
             Voir mon estiamtion
           </button>
