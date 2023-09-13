@@ -36,7 +36,7 @@ const AnalysePresentation = () => {
             }}
           >
             <span
-              className={`text-xl lg:text-4xl transition-all ease-in-out duration-500 text-gray-700 ${
+              className={`text-xl lg:text-4xl transition-all ease-in-out duration-500 text-blue-500 ${
                 isVisible
                   ? "opacity-100 transform translateY(0)"
                   : "opacity-0 -translate-y-1/2"
