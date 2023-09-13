@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
 import LittleLoader from "../../loader/LittleLoader";
 import { CheckIcon } from "@heroicons/react/20/solid";
 
@@ -9,10 +8,6 @@ const AnalyseLoader = () => {
   const [showCheckIcon, setShowCheckIcon] = useState(false);
   const [showCheckIconTwo, setShowCheckIconTwo] = useState(false);
   const [showCheckIconThree, setShowCheckIconThree] = useState(false);
-  const primaryColor = useSelector((state) => state?.user?.settings?.fontColor);
-  const secondaryColor = useSelector(
-    (state) => state?.user?.settings?.fontColor2
-  );
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -45,7 +40,8 @@ const AnalyseLoader = () => {
   const currentSlug = pathSegments[1];
 
   const handleRoute = () => {
-    router.push(`/${currentSlug}/estimation/inscription`);
+    router.push(`/estimation/inscription`);
+    ("");
   };
 
   useEffect(() => {
@@ -55,7 +51,7 @@ const AnalyseLoader = () => {
   }, [showCheckIconThree]);
 
   return (
-    <div className="w-full lg:w-6/12 min-h-[400px] lg:min-h-[600px] flex flex-col justify-center lg:items-center">
+    <div className="w-full lg:w-6/12 min-h-[400px] lg:min-h-[600px] flex flex-col justify-center items-center">
       <h2 className="text-2xl lg:my-0 my-5 lg:text-center text-blue-500">
         Analyse en cours...
       </h2>
