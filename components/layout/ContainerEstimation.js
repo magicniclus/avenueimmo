@@ -2,12 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const ContainerEstimation = (props) => {
-  const stateFontColor = useSelector(
-    (state) => state?.user?.settings?.fontColor
-  );
-  const stateFontColor2 = useSelector(
-    (state) => state?.user?.settings?.fontColor2
-  );
   return (
     <div
       id="estimation"
