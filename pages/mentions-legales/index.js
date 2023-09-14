@@ -1,10 +1,39 @@
 import React from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import Head from "next/head";
 
 const index = () => {
   return (
     <>
+      <Head>
+        <title>Mentions Légales de Avenue-Immo</title>
+        <meta
+          name="description"
+          content="Consultez les mentions légales d'Avenue-Immo pour comprendre nos termes, conditions et informations juridiques concernant l'utilisation de notre plateforme."
+        />
+        <meta
+          name="keywords"
+          content="mentions légales Avenue-Immo, informations juridiques, conditions d'utilisation, droits et responsabilités"
+        />
+        <meta property="og:title" content="Mentions Légales de Avenue-Immo" />
+        <meta
+          property="og:description"
+          content="Consultez les mentions légales d'Avenue-Immo pour comprendre nos termes, conditions et informations juridiques concernant l'utilisation de notre plateforme."
+        />
+        <meta
+          property="og:image"
+          content="URL_DE_VOTRE_IMAGE_REPRESENTANT_LES_MENTIONS"
+        />
+        <meta
+          property="og:url"
+          content="https://www.avenue-immo.com/mentions-legales"
+        />
+        <link
+          rel="canonical"
+          href="https://www.avenue-immo.com/mentions-legales"
+        />
+      </Head>
       <Header />
       <div className="lg:w-full sm:w-11/12 w-full max-w-[1250px] px-5 py-10 lg:px-20 lg:py-16 flex items-center justify-between flex-col">
         <div className="w-full lg:w-full flex flex-col justify-around lg:mt-0 mt-10">
