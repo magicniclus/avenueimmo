@@ -128,11 +128,10 @@ const index = () => {
           const estimationDetails = {
             ...data,
             id: uniqueId,
-            agent: userId,
             ...clientInfoWithDate,
           };
 
-          // Ajouter l'estimation dans la collection globale 'estimations'
+          // Ajouter l'estimation dans 'estimations'
           addEstimation(estimationDetails);
 
           dispatch({
