@@ -50,7 +50,7 @@ const Map = (props) => {
 
       dispatch({
         type: "MAP_IS_LOADING",
-        payload: false, // Vous pourriez mettre false si la carte a fini de charger, ou true au début du chargement (selon ce que vous voulez accomplir)
+        payload: false,
       });
 
       const initialMarker = new mapboxgl.Marker(el)
@@ -61,6 +61,8 @@ const Map = (props) => {
 
     map.dragPan.disable();
     map.scrollZoom.disable();
+    map.dragRotate.disable(); // Ajouté pour désactiver le déplacement avec deux doigts
+    map.touchZoomRotate.disableRotation(); // Ajouté pour désactiver le zoom avec pincement
 
     return () => map.remove();
   }, []);
