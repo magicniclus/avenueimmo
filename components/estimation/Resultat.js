@@ -17,19 +17,17 @@ const Resultat = () => {
   const nbrPiece = useSelector((state) => state?.clientInfomation?.pieces);
   const type = useSelector((state) => state?.clientInfomation?.type);
   const price = useSelector(
-    (state) => state?.clientInfomation?.data?.mainValuation?.predicted_price
+    (state) => state?.clientInfomation?.predicted_price
   );
   const priceMin = useSelector(
-    (state) => state?.clientInfomation?.data?.mainValuation?.confidence_min
+    (state) => state?.clientInfomation?.confidence_min
   );
   const priceMax = useSelector(
-    (state) => state?.clientInfomation?.data?.mainValuation?.confidence_max
+    (state) => state?.clientInfomation?.confidence_max
   );
-  const m2 = useSelector(
-    (state) => state?.clientInfomation?.data?.mainValuation?.price_m2
-  );
+  const m2 = useSelector((state) => state?.clientInfomation?.price_m2);
   const notation = useSelector(
-    (state) => state?.clientInfomation?.data?.mainValuation?.confidence_index
+    (state) => state?.clientInfomation?.confidence_index
   );
 
   const tags = [
