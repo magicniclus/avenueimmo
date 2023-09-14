@@ -61,8 +61,8 @@ const Map = (props) => {
 
     map.dragPan.disable();
     map.scrollZoom.disable();
-    map.dragRotate.disable(); // Ajouté pour désactiver le déplacement avec deux doigts
-    map.touchZoomRotate.disableRotation(); // Ajouté pour désactiver le zoom avec pincement
+    map.dragRotate.disable();
+    map.touchZoomRotate.disable(); // Désactive à la fois la rotation et le zoom via le pincement
 
     return () => map.remove();
   }, []);
