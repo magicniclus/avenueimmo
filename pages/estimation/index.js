@@ -40,9 +40,9 @@ const index = () => {
             <EtapeEstimationContainer />
             <div className="lg:block hidden">
               <p className="text-xs font-light text-gray-400 mt-5">
-                *Le resultat de cette estimation ne remplace pas une estimation
-                réelle. Nos algorythmes sont en perpétuelles évolution afin de
-                se rapprocher le plus possible de la réalité.
+                *Le résultat de cette estimation ne saurait remplacer une
+                évaluation concrète. Nos algorithmes sont en constante
+                amélioration pour refléter au mieux la réalité.
               </p>
             </div>
           </div>
