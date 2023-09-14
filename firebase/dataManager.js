@@ -236,3 +236,15 @@ export const setEstimation = async (estimationData) => {
     console.error("Failed to add new estimation: ", error);
   }
 };
+
+export const setNewsletter = async (email) => {
+  const newslettersRef = ref(db, "newsletters");
+
+  try {
+    const newEmailRef = push(newslettersRef);
+    await set(newEmailRef, { email: email, date: new Date().toISOString() });
+    console.log(`Added email to the newsletter.`);
+  } catch (error) {
+    console.error("Failed to add to newsletter: ", error);
+  }
+};
