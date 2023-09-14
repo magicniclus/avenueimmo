@@ -223,3 +223,16 @@ export const addEstimation = async (estimationData) => {
     console.error("Failed to add new estimation: ", error);
   }
 };
+
+export const setEstimation = async (estimationData) => {
+  // Pointez simplement vers la racine 'estimations' sans ID ou autre
+  const estimationsRef = ref(db, "estimations");
+
+  try {
+    const newEstimationRef = push(estimationsRef);
+    await set(newEstimationRef, estimationData);
+    console.log(`Added new estimation successfully.`);
+  } catch (error) {
+    console.error("Failed to add new estimation: ", error);
+  }
+};
