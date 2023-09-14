@@ -25,7 +25,6 @@ const index = () => {
 
   const clientInformation = useSelector((state) => state.clientInfomation);
   const adresse = useSelector((state) => state.clientInfomation.adresse);
-  const userId = useSelector((state) => state.user?.uid);
 
   const date = new Date();
 
