@@ -10,7 +10,6 @@ import { addEstimation } from "../../../firebase/dataManager";
 import Loader from "../../../components/loader/Loader";
 import ContainerEstimationTwo from "../../../components/layout/ContainerEstimationTwo";
 import EstimationLayout from "../../../components/layout/EstimationLayout";
-import UserInformation from "../../../components/estimation/UserInformation";
 import Resultat from "../../../components/estimation/Resultat";
 
 import { v4 as uuidv4 } from "uuid";
