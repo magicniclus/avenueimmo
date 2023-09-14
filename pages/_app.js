@@ -9,7 +9,7 @@ import CookieManager from "../components/CookieManager";
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     const tagManagerArgs = {
-      gtmId: "GTM-P6FBLTV",
+      gtmId: "GTM-WP9R782",
     };
     TagManager.initialize(tagManagerArgs);
   }, []);
