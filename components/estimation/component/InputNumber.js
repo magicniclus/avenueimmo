@@ -16,6 +16,12 @@ const InputNumber = (props) => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
+  };
+
   return (
     <div className="flex">
       <input
@@ -26,6 +32,7 @@ const InputNumber = (props) => {
         className="max-w-[500px] w-[80%] sm:w-[90%] border px-4 py-3 rounded-l-md font-light text-sm outline-none text-gray-700"
         placeholder={placeholder || "Entrez la surface..."}
         style={{ borderColor: "#3b82f6" }}
+        onKeyPress={handleKeyPress}
       />
       <div
         className="w-[20%] sm:w-[10%] flex items-center justify-center rounded-r-md py-2 px-5"
