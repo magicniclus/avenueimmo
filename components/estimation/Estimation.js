@@ -8,21 +8,8 @@ import Loader from "../loader/Loader";
 import ContainerEstimation from "../layout/ContainerEstimation";
 
 const Estimation = () => {
-  const router = useRouter();
-
-  const primaryColor = useSelector((state) => state?.user?.settings?.fontColor);
-  const secondaryColor = useSelector(
-    (state) => state?.user?.settings?.fontColor2
-  );
-  const userName = useSelector(
-    (state) => state?.user?.userInformation?.lastName
-  );
-
   const stateMapIsLoading = useSelector((state) => state?.mapIsLoading);
   const stateUserIsLoading = useSelector((state) => state?.userIsLoading);
-
-  // Vérifiez si l'URL contient 'dashboard'
-  const isDashboard = router.asPath.includes("dashboard");
 
   return (
     <ContainerEstimation>
