@@ -12,20 +12,17 @@ import Head from "next/head";
 const index = () => {
   const stateUserIsLoading = useSelector((state) => state?.mapIsLoading);
   const stateClientAdresse = useSelector(
-    (state) => state?.clientInformation?.adresse
+    (state) => state?.clientInfomation?.adresse
   );
 
-  const stateSlug = useSelector((state) => state?.user?.settings?.slug);
   const router = useRouter();
-  const pathSegments = router.asPath.split("/");
-  const currentSlug = pathSegments[1];
   useEffect(() => {
     setTimeout(() => {
       if (!stateClientAdresse) {
         router.push(`/`);
       }
     }, 1000);
-  }, [stateClientAdresse, stateSlug, currentSlug]);
+  }, [stateClientAdresse]);
 
   return (
     <>
