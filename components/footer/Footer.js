@@ -1,3 +1,11 @@
+import { useEffect, useState } from "react";
+import { setNewsletter } from "../../firebase/dataManager";
+
+const isValidEmail = (email) => {
+  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  return regex.test(email);
+};
+
 const navigation = {
   legal: [
     { name: "Conditions d'utilisation", href: "/conditions-d-utilisation" },
@@ -10,6 +18,41 @@ const navigation = {
 };
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [isButtonActive, setIsButtonActive] = useState(false);
+  const [notification, setNotification] = useState(null);
+
+  useEffect(() => {
+    if (notification) {
+      setIsButtonActive(false);
+      setTimeout(() => {
+        setNotification(null);
+      }, 3000);
+    }
+  }, [notification]);
+
+  const handleEmailChange = (e) => {
+    const currentEmail = e.target.value;
+    setEmail(currentEmail);
+    setIsButtonActive(isValidEmail(currentEmail));
+  };
+
+  const handleNewsletterSubmission = async (e) => {
+    e.preventDefault();
+    if (isButtonActive) {
+      try {
+        await setNewsletter(email);
+        setEmail("");
+        setNotification({ type: "success", message: "Vous êtes inscrit!" });
+      } catch (error) {
+        setNotification({
+          type: "error",
+          message: "Il y a eu une erreur. Veuillez réessayer.",
+        });
+      }
+    }
+  };
+
   return (
     <footer className="bg-gray-900" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
@@ -45,7 +88,10 @@ export default function Footer() {
             <p className="mt-2 text-sm leading-6 text-gray-300">
               Recevez les dernières informations sur nos services et nos offres.
             </p>
-            <form className="mt-6 sm:flex sm:max-w-md">
+            <form
+              className="mt-6 sm:flex sm:max-w-md"
+              onSubmit={handleNewsletterSubmission}
+            >
               <label htmlFor="email-address" className="sr-only">
                 Email
               </label>
@@ -55,18 +101,36 @@ export default function Footer() {
                 id="email-address"
                 autoComplete="email"
                 required
+                value={email}
+                onChange={handleEmailChange}
                 className="w-full min-w-0 appearance-none rounded-md border-0 bg-white/5 px-3 py-1.5 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:w-64 sm:text-sm sm:leading-6 xl:w-full"
                 placeholder="Entrez votre email"
               />
               <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                  disabled={!isButtonActive}
+                  className={`flex w-full items-center justify-center rounded-md px-3 py-2 text-sm font-semibold shadow-sm ${
+                    isButtonActive
+                      ? "bg-blue-500 hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 text-white"
+                      : "bg-blue-500 opacity-60 cursor-not-allowed text-white"
+                  }`}
                 >
                   Envoyer
                 </button>
               </div>
             </form>
+            {notification && (
+              <div
+                className={`mt-4 text-sm ${
+                  notification.type === "success"
+                    ? "text-green-500"
+                    : "text-red-500"
+                }`}
+              >
+                {notification.message}
+              </div>
+            )}
           </div>
         </div>
         <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24">
