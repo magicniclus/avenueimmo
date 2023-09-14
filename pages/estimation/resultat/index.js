@@ -15,6 +15,8 @@ import Resultat from "../../../components/estimation/Resultat";
 import { v4 as uuidv4 } from "uuid";
 import HeaderWithoutNav from "../../../components/header/HeaderWithoutNav";
 
+import Head from "next/head";
+
 const index = () => {
   const dispatch = useDispatch();
 
@@ -155,6 +157,40 @@ const index = () => {
 
   return (
     <>
+      <Head>
+        <title>
+          Résultat de l'Estimation Avenue-Immo : Découvrez la Valeur de Votre
+          Bien
+        </title>
+        <meta
+          name="description"
+          content="Découvrez la valeur précise de votre bien immobilier grâce à Avenue-Immo. Notre analyse détaillée vous offre une évaluation claire basée sur les tendances actuelles du marché immobilier."
+        />
+        <meta
+          name="keywords"
+          content="résultat d'estimation immobilière, valeur de maison, valeur d'appartement, estimation détaillée, Avenue-Immo résultat"
+        />
+        <meta
+          property="og:title"
+          content="Résultat de l'Estimation Avenue-Immo : Découvrez la Valeur de Votre Bien"
+        />
+        <meta
+          property="og:description"
+          content="Découvrez la valeur précise de votre bien immobilier grâce à Avenue-Immo. Notre analyse détaillée vous offre une évaluation claire basée sur les tendances actuelles du marché immobilier."
+        />
+        <meta
+          property="og:image"
+          content="URL_DE_VOTRE_IMAGE_REPRESENTANT_LE_RESULTAT"
+        />
+        <meta
+          property="og:url"
+          content="https://www.avenue-immo.com/estimation/resultat"
+        />
+        <link
+          rel="canonical"
+          href="https://www.avenue-immo.com/estimation/resultat"
+        />
+      </Head>
       <HeaderWithoutNav />
       <EstimationLayout>
         <ContainerEstimationTwo>
