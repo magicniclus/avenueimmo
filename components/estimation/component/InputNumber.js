@@ -29,10 +29,11 @@ const InputNumber = (props) => {
         value={value}
         step="1"
         onChange={handleInputChange}
-        className="max-w-[500px] w-[80%] sm:w-[90%] border px-4 py-3 rounded-l-md font-light text-sm outline-none text-gray-700"
+        className="max-w-[500px] w-[80%] sm:w-[90%] border px-4 py-3 rounded-l-md font-light text-normal outline-none text-gray-700"
         placeholder={placeholder || "Entrez la surface..."}
         style={{ borderColor: "#3b82f6" }}
         onKeyPress={handleKeyPress}
+        onWheel={(e) => e.preventDefault()}
       />
       <div
         className="w-[20%] sm:w-[10%] flex items-center justify-center rounded-r-md py-2 px-5"
