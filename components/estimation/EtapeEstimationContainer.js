@@ -7,7 +7,6 @@ const EtapeEstimationContainer = () => {
   const stepInProgress = useSelector((state) => state?.stepInProgress);
   //Faire les étapes de l'estimation en fonction de l'avancement de l'utilisateur
   const [etape, setEtape] = useState();
-  console.log(clientInformation.travaux);
   useEffect(() => {
     setEtape([
       {
