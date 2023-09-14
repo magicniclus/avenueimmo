@@ -104,7 +104,7 @@ const SearchMapBar = ({ map }) => {
             value={input}
             onChange={handleInputChange}
             placeholder="Saisir une adresse"
-            className="max-w-[500px] w-[80%] sm:w-[90%] border px-4 py-3 rounded-l-md font-light text-sm outline-none border-blue-500 text-gray-700"
+            className="max-w-[500px] w-[80%] sm:w-[90%] border px-4 py-3 rounded-l-md font-light text-base outline-none border-blue-500 text-gray-700"
             style={{
               color: primaryColor,
               borderColor: secondaryColor,
