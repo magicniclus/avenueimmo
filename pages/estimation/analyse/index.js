@@ -11,6 +11,8 @@ import AnalyseLoader from "../../../components/estimation/component/AnalyseLoade
 import Loader from "../../../components/loader/Loader";
 import HeaderWithoutNav from "../../../components/header/HeaderWithoutNav";
 
+import Head from "next/head";
+
 const index = () => {
   const [isLoading, setIsLoading] = useState(false);
   const getUserAdresse = useSelector(
@@ -46,6 +48,40 @@ const index = () => {
 
   return (
     <>
+      <Head>
+        <title>
+          Analyse des Données Avenue-Immo : Comprendre Votre Estimation
+          Immobilière
+        </title>
+        <meta
+          name="description"
+          content="Divez plus profondément dans votre estimation immobilière avec Avenue-Immo. Nous analysons des données clés pour vous donner une évaluation précise et transparente de votre bien."
+        />
+        <meta
+          name="keywords"
+          content="analyse des données immobilières, détails estimation immobilière, comment estimer un bien, Avenue-Immo analyse"
+        />
+        <meta
+          property="og:title"
+          content="Analyse des Données Avenue-Immo : Comprendre Votre Estimation Immobilière"
+        />
+        <meta
+          property="og:description"
+          content="Divez plus profondément dans votre estimation immobilière avec Avenue-Immo. Nous analysons des données clés pour vous donner une évaluation précise et transparente de votre bien."
+        />
+        <meta
+          property="og:image"
+          content="URL_DE_VOTRE_IMAGE_REPRESENTANT_L'ANALYSE"
+        />
+        <meta
+          property="og:url"
+          content="https://www.avenue-immo.com/estimation/analyse"
+        />
+        <link
+          rel="canonical"
+          href="https://www.avenue-immo.com/estimation/analyse"
+        />
+      </Head>
       <HeaderWithoutNav />
       <EstimationLayout>
         <ContainerEstimationTwo>
