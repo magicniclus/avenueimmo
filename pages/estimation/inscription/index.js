@@ -7,6 +7,7 @@ import FormulaireFinal from "../../../components/estimation/component/Formulaire
 import Loader from "../../../components/loader/Loader";
 import { useRouter } from "next/router";
 import HeaderWithoutNav from "../../../components/header/HeaderWithoutNav";
+import Head from "next/head";
 
 const index = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -34,6 +35,39 @@ const index = () => {
 
   return (
     <>
+      <Head>
+        <title>
+          Inscription Avenue-Immo : Accédez à Votre Estimation Immobilière
+        </title>
+        <meta
+          name="description"
+          content="Inscrivez-vous sur Avenue-Immo pour découvrir une estimation précise de votre bien immobilier. Rejoignez-nous pour accéder à des évaluations détaillées et des conseils immobiliers."
+        />
+        <meta
+          name="keywords"
+          content="inscription Avenue-Immo, accès estimation immobilière, devenir membre, inscription gratuite"
+        />
+        <meta
+          property="og:title"
+          content="Inscription Avenue-Immo : Accédez à Votre Estimation Immobilière"
+        />
+        <meta
+          property="og:description"
+          content="Inscrivez-vous sur Avenue-Immo pour découvrir une estimation précise de votre bien immobilier. Rejoignez-nous pour accéder à des évaluations détaillées et des conseils immobiliers."
+        />
+        <meta
+          property="og:image"
+          content="URL_DE_VOTRE_IMAGE_REPRESENTANT_L'INSCRIPTION"
+        />
+        <meta
+          property="og:url"
+          content="https://www.avenue-immo.com/estimation/inscription"
+        />
+        <link
+          rel="canonical"
+          href="https://www.avenue-immo.com/estimation/inscription"
+        />
+      </Head>
       <HeaderWithoutNav />
       <EstimationLayout>
         <ContainerEstimationTwo>
