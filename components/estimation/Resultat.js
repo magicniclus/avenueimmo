@@ -16,20 +16,17 @@ const Resultat = () => {
   const nbrChambre = useSelector((state) => state?.clientInfomation?.chambres);
   const nbrPiece = useSelector((state) => state?.clientInfomation?.pieces);
   const type = useSelector((state) => state?.clientInfomation?.type);
-  const price = useSelector(
-    (state) => state?.clientInfomation?.predicted_price
-  );
+  const price = useSelector((state) => state?.clientInfomation?.predictedPrice);
   const priceMin = useSelector(
-    (state) => state?.clientInfomation?.confidence_min
+    (state) => state?.clientInfomation?.confidenceMin
   );
   const priceMax = useSelector(
-    (state) => state?.clientInfomation?.confidence_max
+    (state) => state?.clientInfomation?.confidenceMax
   );
-  const m2 = useSelector((state) => state?.clientInfomation?.price_m2);
+  const m2 = useSelector((state) => state?.clientInfomation?.priceM2);
   const notation = useSelector(
-    (state) => state?.clientInfomation?.confidence_index
+    (state) => state?.clientInfomation?.confidenceIndex
   );
-
   const tags = [
     clientSurface + " m2",
     nbrChambre + (nbrChambre > 1 ? " chambres" : " chambre"),
