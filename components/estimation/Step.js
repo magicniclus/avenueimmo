@@ -99,7 +99,8 @@ const Step = () => {
         return <AppartementMaison />;
     }
   };
-  const handleStep = () => {
+  const handleStep = (e) => {
+    e.preventDefault();
     dispatch({ type: "UPDATE_SIMULATEUR_STEP" });
   };
 
@@ -176,7 +177,7 @@ const Step = () => {
             backgroundColor: "#3b82f6",
             opacity: isButtonDisabled() ? 0.6 : 1,
           }}
-          onClick={(e) => (step === 14 ? handleRoute(e) : handleStep())}
+          onClick={(e) => (step === 14 ? handleRoute(e) : handleStep(e))}
         >
           {step === 14 ? "Voir l'estimation" : "Suivant"}
         </button>
