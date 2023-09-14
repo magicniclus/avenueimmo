@@ -21,8 +21,8 @@ const index = () => {
   const currentSlug = pathSegments[1];
   useEffect(() => {
     setTimeout(() => {
-      if (!stateClientAdresse && !stateSlug && currentSlug !== "[slug]") {
-        router.push(`/${currentSlug}`);
+      if (!stateClientAdresse) {
+        router.push(`/`);
       }
     }, 1000);
   }, [stateClientAdresse, stateSlug, currentSlug]);
