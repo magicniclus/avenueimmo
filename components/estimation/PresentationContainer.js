@@ -54,7 +54,7 @@ const PresentationContainer = () => {
       <div>
         <h1 className="lg:text-6xl text-4xl lg:w-11/12 mt-10 lg:mt-3 text-gray-700">
           Estimez votre bien en ligne{" "}
-          <span className="inline bg-gradient-to-r from-blue-300 via-blue-500 to-blue-300 bg-clip-text font-display font-bold tracking-tight text-transparent min-h-max">
+          <span className="inline bg-gradient-to-r from-blue-500 via-blue-300 to-blue-500 bg-clip-text font-display font-bold tracking-tight text-transparent min-h-max">
             gratuitement
           </span>
           .
