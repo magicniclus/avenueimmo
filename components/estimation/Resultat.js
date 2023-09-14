@@ -7,10 +7,6 @@ import { capitalizeFirstLetter, formatNumberWithSpaces } from "../../lib/utils";
 import Stars from "./Stars";
 
 const Resultat = () => {
-  const primaryColor = useSelector((state) => state?.user?.settings?.fontColor);
-  const secondaryColor = useSelector(
-    (state) => state?.user?.settings?.fontColor2
-  );
   const clientAdresse = useSelector(
     (state) => state?.clientInfomation?.adresse
   );
@@ -58,7 +54,7 @@ const Resultat = () => {
           tags.map((item, idx) => {
             return (
               <li
-                className="w-max px-2 py-1 rounded-full text-xs font-light mr-2 mt-2 text-blue-500"
+                className="w-max px-2 py-1 rounded-full text-xs font-light mr-2 mt-2 text-blue-500 border-blue-500 border"
                 key={idx}
               >
                 {item}
