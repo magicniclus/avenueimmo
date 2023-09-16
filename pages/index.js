@@ -37,9 +37,7 @@ const Accueil = () => {
       </Head>
       <Header />
       <main className="w-full flex justify-center items-center flex-col">
-        <EstimationLayout>
-          <Estimation />
-        </EstimationLayout>
+        <EstimationLayout></EstimationLayout>
         <Breadrumb list={["ACCUEIL", "ESTIMATION"]} />
         <EvaluationBanner />
         <ServiceBanner />
