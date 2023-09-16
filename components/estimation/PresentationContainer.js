@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 const PresentationContainer = () => {
   const avantages = [
     {
-      title: "Visualisez votre estimation en moins de 2 minutes",
+      title: "Visualisez votre estimation en moins de 2 minutes.",
       icon: (
         <CheckBadgeIcon
           className="h-4 w-4 text-yellow-500"
@@ -14,7 +14,7 @@ const PresentationContainer = () => {
       ),
     },
     {
-      title: "Des données précise ajustées en temps réel.",
+      title: "Des données précises ajustées en temps réel.",
       icon: (
         <CheckBadgeIcon
           className="h-4 w-4 text-yellow-500"
@@ -23,7 +23,7 @@ const PresentationContainer = () => {
       ),
     },
     {
-      title: "Sans engagement et vos données sont sécurisées  ",
+      title: "Sans engagement, et vos données sont sécurisées.",
       icon: (
         <CheckBadgeIcon
           className="h-4 w-4 text-yellow-500"
