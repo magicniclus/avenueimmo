@@ -5,9 +5,9 @@ const CTABanner = () => {
     <div className="relative">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
         <h2 className="text-xl tracking-tight text-gray-700 sm:text-2xl mr-10">
-          Vous souhaitez estimez votre bien immobilier ?
+          Vous souhaitez estimer votre bien immobilier ?
           <br />
-          C'est gratuit et ca ne prend que 2 minutes !
+          C'est gratuit et cela ne prend que 2 minutes !
         </h2>
         <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:flex-shrink-0">
           <a
