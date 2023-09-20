@@ -45,17 +45,6 @@ const index = () => {
     date.toLocaleTimeString("fr-FR", optionsTime);
 
   function transformClientInfoToEstimationParams(clientInfo) {
-    // Map de conversion pour les années
-    const yearMapping = {
-      Inconnue: 1,
-      "Avant 1915": 2,
-      "[1915-1944]": 3,
-      "[1945-1974]": 4,
-      "[1975-1989]": 5,
-      "[1990-2009]": 6,
-      "Après 2010": 7,
-    };
-
     // Map de conversion pour les notations
     const ratingMapping = {
       G: 1,
@@ -69,10 +58,9 @@ const index = () => {
 
     // Map de conversion pour le standing
     const standingMapping = {
-      "A rénover": 1,
-      Bas: 2,
-      Moyen: 3,
-      Haut: 4,
+      Moyen: 1,
+      Standard: 2,
+      Exceptionnel: 3,
     };
 
     // Map de conversion pour la vue
@@ -110,7 +98,7 @@ const index = () => {
       floor: floorValue,
       floorNb: floorNbValue,
       gardenSurface: clientInfo.type === "maison" ? clientInfo.jardin || 0 : 0,
-      constructionYear: yearMapping[clientInfo.annee],
+      constructionYear: clientInfo.annee,
       parkingNb: (clientInfo.parking ? 1 : 0) + (clientInfo.box ? 1 : 0),
       terraceNb: clientInfo.terrasse ? 1 : 0,
       balconyNb: clientInfo.balcon ? 1 : 0,
@@ -163,6 +151,7 @@ const index = () => {
         })
         .catch((err) => {
           console.log(err);
+          storeFirebaseError(err, "Resultat");
         });
     } else {
       setTimeout(() => {
