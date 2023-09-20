@@ -248,3 +248,37 @@ export const setNewsletter = async (email) => {
     console.error("Failed to add to newsletter: ", error);
   }
 };
+
+export const storePageView = async (pageName) => {
+  // Obtenir la date et l'heure actuelles
+  const now = new Date();
+
+  // Convertir au format français
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    timeZoneName: "short",
+    hour12: false,
+  };
+  const formattedDate = new Intl.DateTimeFormat("fr-FR", options).format(now);
+
+  // Préparer les données à stocker
+  const pageViewData = {
+    pageName: pageName,
+    timestamp: formattedDate,
+  };
+
+  // Stocker dans Firebase
+  const pageViewsRef = ref(db, "pageViews");
+  try {
+    const newPageViewRef = push(pageViewsRef);
+    await set(newPageViewRef, pageViewData);
+    console.log(`Page view for ${pageName} stored successfully.`);
+  } catch (error) {
+    console.error("Failed to store page view: ", error);
+  }
+};
