@@ -6,6 +6,10 @@ import { useRouter } from "next/router";
 
 import { getEstimation } from "../../../homaData/getData";
 import { addEstimation } from "../../../firebase/dataManager";
+import {
+  storePageView,
+  storeFirebaseError,
+} from "../../../firebase/dataManager";
 
 import Loader from "../../../components/loader/Loader";
 import ContainerEstimationTwo from "../../../components/layout/ContainerEstimationTwo";
@@ -117,6 +121,10 @@ const index = () => {
   }
 
   useEffect(() => {
+    storePageView("Résultat");
+  }, []);
+
+  useEffect(() => {
     if (adresse) {
       getEstimation(transformClientInfoToEstimationParams(clientInformation))
         .then((data) => {
@@ -132,7 +140,10 @@ const index = () => {
           };
 
           // Ajouter l'estimation dans 'estimations'
-          addEstimation(estimationDetails);
+          addEstimation(estimationDetails).catch((error) => {
+            console.error("Une erreur s'est produite:", error);
+            storeFirebaseError(error, "Resultat"); // Remplacez "NomDeLaPage" par le nom de votre page ou par une variable correspondante
+          });
 
           dispatch({
             type: "SET_CLIENT_INFORMATION",
