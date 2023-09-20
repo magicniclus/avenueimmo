@@ -93,14 +93,9 @@ const index = () => {
     let floorValue, floorNbValue;
 
     if (clientInfo.type === "maison") {
-      console.log("Type de bien: Maison");
-      console.log("Valeur de clientInfo.etages:", clientInfo.niveaux);
       floorValue = 0;
       floorNbValue = parseInt(clientInfo.niveaux, 10);
     } else {
-      console.log("Type de bien: Appartement");
-      console.log("Valeur de clientInfo.etageActuel:", clientInfo.niveaux);
-      console.log("Valeur de clientInfo.etagesBatiment:", clientInfo.etages);
       floorValue = parseInt(clientInfo.etages, 10);
       floorNbValue = parseInt(clientInfo.niveaux, 10);
     }
