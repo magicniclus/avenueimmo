@@ -135,22 +135,28 @@ const index = () => {
           };
 
           // Ajouter l'estimation dans 'estimations'
-          addEstimation(estimationDetails).catch((error) => {
-            console.error("Une erreur s'est produite:", error);
-            storeFirebaseError(error, "Resultat"); // Remplacez "NomDeLaPage" par le nom de votre page ou par une variable correspondante
-          });
-
-          dispatch({
-            type: "SET_CLIENT_INFORMATION",
-            payload: data,
-          });
-          setEstimation(data);
+          return addEstimation(estimationDetails)
+            .then(() => {
+              dispatch({
+                type: "SET_CLIENT_INFORMATION",
+                payload: data,
+              });
+              setEstimation(data);
+            })
+            .catch((error) => {
+              console.error(
+                "Une erreur lors de l'ajout de l'estimation:",
+                error
+              );
+              storeFirebaseError(error, "Resultat"); // Remplacez "NomDeLaPage" par le nom de votre page ou par une variable correspondante
+              throw error; // Rejette l'erreur pour qu'elle soit capturée par le catch final
+            });
         })
         .then(() => {
           setIsLoading(false);
         })
         .catch((err) => {
-          console.log(err);
+          console.error("Une erreur s'est produite:", err);
           storeFirebaseError(err, "Resultat");
         });
     } else {
