@@ -50,12 +50,12 @@ const VueOriantation = () => {
               setSelectedCard={setSelectedView}
             />
             <CardWithoutSize
-              title="Dégagé"
+              title="Dégagée"
               selectedCard={selectedView}
               setSelectedCard={setSelectedView}
             />
             <CardWithoutSize
-              title="Exceptionnel"
+              title="Exceptionnelle"
               selectedCard={selectedView}
               setSelectedCard={setSelectedView}
             />
