@@ -90,6 +90,21 @@ const index = () => {
       Est: 4,
     };
 
+    let floorValue, floorNbValue;
+
+    if (clientInfo.type === "maison") {
+      console.log("Type de bien: Maison");
+      console.log("Valeur de clientInfo.etages:", clientInfo.niveaux);
+      floorValue = 0;
+      floorNbValue = parseInt(clientInfo.niveaux, 10);
+    } else {
+      console.log("Type de bien: Appartement");
+      console.log("Valeur de clientInfo.etageActuel:", clientInfo.niveaux);
+      console.log("Valeur de clientInfo.etagesBatiment:", clientInfo.etages);
+      floorValue = parseInt(clientInfo.etages, 10);
+      floorNbValue = parseInt(clientInfo.niveaux, 10);
+    }
+
     return {
       lon: clientInfo.coordinates[0],
       lat: clientInfo.coordinates[1],
@@ -97,12 +112,9 @@ const index = () => {
       propertySurface: clientInfo.surface,
       roomNb: clientInfo.pieces,
       bedroomNb: clientInfo.chambres,
-      floor:
-        clientInfo.type === "maison"
-          ? 0
-          : parseInt(clientInfo.etages.split(" ")[0], 10),
-      floorNb: parseInt(clientInfo.etages.split(" ")[0], 10),
-      gardenSurface: clientInfo.jardin ? clientInfo.surface : 0,
+      floor: floorValue,
+      floorNb: floorNbValue,
+      gardenSurface: clientInfo.type === "maison" ? clientInfo.jardin || 0 : 0,
       constructionYear: yearMapping[clientInfo.annee],
       parkingNb: (clientInfo.parking ? 1 : 0) + (clientInfo.box ? 1 : 0),
       terraceNb: clientInfo.terrasse ? 1 : 0,
