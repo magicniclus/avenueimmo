@@ -282,3 +282,37 @@ export const storePageView = async (pageName) => {
     console.error("Failed to store page view: ", error);
   }
 };
+
+export const storeFirebaseError = async (error, pageName) => {
+  // Obtenir la date et l'heure actuelles
+  const now = new Date();
+
+  // Convertir au format français
+  const optionsDate = { year: "numeric", month: "long", day: "numeric" };
+  const optionsTime = {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  };
+  const formattedDate = `${new Intl.DateTimeFormat("fr-FR", optionsDate).format(
+    now
+  )} à ${new Intl.DateTimeFormat("fr-FR", optionsTime).format(now)}`;
+
+  // Préparer les données d'erreur à stocker
+  const errorData = {
+    pageName: pageName,
+    errorMessage: error.toString(),
+    timestamp: formattedDate,
+  };
+
+  // Stocker l'erreur dans Firebase
+  const errorsRef = ref(db, "firebase_errors");
+  try {
+    const newErrorRef = push(errorsRef);
+    await set(newErrorRef, errorData);
+    console.log(`Erreur pour ${pageName} stockée avec succès.`);
+  } catch (storeError) {
+    console.error("Échec de stockage de l'erreur: ", storeError);
+  }
+};
