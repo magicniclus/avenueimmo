@@ -7,13 +7,11 @@ const Annee = () => {
   const [value, setValue] = useState(0);
 
   const options = [
-    "Avant 1949",
-    "Entre 1949 et 1997",
-    "Entre 1997 et 2005",
-    "Entre 2005 et 2012",
-    "Entre 2012 et 2018",
-    "Après 2018",
-    "Neuf",
+    { label: "Avant 1944", value: 3 },
+    { label: "Entre 1945 et 1974", value: 4 },
+    { label: "Entre 1975 et 1989", value: 5 },
+    { label: "Entre 1990 et 2009", value: 6 },
+    { label: "Après 2010", value: 7 },
   ];
 
   useEffect(() => {
@@ -32,7 +30,15 @@ const Annee = () => {
         L'année de construction de votre bien :
       </h2>
       <div className="flex">
-        <SelectWithIcon options={options} onChange={setValue} />
+        <SelectWithIcon
+          options={options.map((opt) => opt.label)}
+          onChange={(selectedLabel) => {
+            const selectedValue = options.find(
+              (opt) => opt.label === selectedLabel
+            ).value;
+            setValue(selectedValue);
+          }}
+        />
       </div>
     </>
   );
