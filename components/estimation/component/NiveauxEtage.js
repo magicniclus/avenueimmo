@@ -3,40 +3,46 @@ import { useSelector, useDispatch } from "react-redux";
 import SelectWithIcon from "./SelectWithIcon";
 
 const NiveauxEtage = () => {
-  const optionsEtage = [
-    "1er étage",
-    "2eme étages",
-    "3eme étages",
-    "4eme étages",
-    "5eme étages",
-    "6eme étages ou +",
-  ];
-  const optionsNiveaux = [
-    "Plein pied",
-    "1 étage",
-    "2 étages",
-    "3 étages",
-    "4 étages",
-    "5 étages ou +",
-  ];
+  const etageMapping = {
+    "1er étage": 1,
+    "2eme étages": 2,
+    "3eme étages": 3,
+    "4eme étages": 4,
+    "5eme étages": 5,
+    "6eme étages ou +": 6,
+  };
+
+  const niveauxMapping = {
+    "Plein pied": 0,
+    "1 étage": 1,
+    "2 étages": 2,
+    "3 étages": 3,
+    "4 étages": 4,
+    "5 étages ou +": 5,
+  };
+
   const dispatch = useDispatch();
 
   const type = useSelector((state) => state?.clientInfomation?.type);
   const [valueNiveaux, setValueNiveaux] = useState(0);
   const [valueEtages, setValueEtages] = useState(0);
+
   useEffect(() => {
+    const niveauxValue = niveauxMapping[valueNiveaux];
+    const etagesValue = etageMapping[valueEtages];
     if (type === "Appartement") {
       dispatch({
         type: "SET_CLIENT_INFORMATION",
-        payload: { niveaux: valueNiveaux, etages: valueEtages },
+        payload: { niveaux: niveauxValue, etages: etagesValue },
       });
     } else {
       dispatch({
         type: "SET_CLIENT_INFORMATION",
-        payload: { etages: valueNiveaux },
+        payload: { etages: niveauxValue },
       });
     }
   }, [valueNiveaux, valueEtages]);
+
   return (
     <>
       <h2 className="text-2xl font-light lg:my-0 my-5 text-blue-500">
@@ -48,15 +54,18 @@ const NiveauxEtage = () => {
             <h3 className="font-light text-sm mb-3 text-gray-700">
               À quel étage se situe votre appartement ?
             </h3>
-            <SelectWithIcon options={optionsEtage} onChange={setValueEtages} />
+            <SelectWithIcon
+              options={Object.keys(etageMapping)}
+              onChange={(value) => setValueEtages(value)}
+            />
           </div>
           <div className="flex flex-col mt-5">
             <h3 className="font-light text-sm mb-3 text-gray-700">
               Combien de niveaux possède votre appartement ?
             </h3>
             <SelectWithIcon
-              options={optionsNiveaux}
-              onChange={setValueNiveaux}
+              options={Object.keys(niveauxMapping)}
+              onChange={(value) => setValueNiveaux(value)}
             />
           </div>
         </div>
@@ -65,7 +74,10 @@ const NiveauxEtage = () => {
           <h3 className="font-light text-sm mb-3 text-gray-700">
             Combien de niveaux possède votre maison ?
           </h3>
-          <SelectWithIcon options={optionsNiveaux} onChange={setValueNiveaux} />
+          <SelectWithIcon
+            options={Object.keys(niveauxMapping)}
+            onChange={(value) => setValueNiveaux(value)}
+          />
         </div>
       )}
     </>
