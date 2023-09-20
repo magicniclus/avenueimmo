@@ -82,10 +82,10 @@ const index = () => {
 
     if (clientInfo.type === "maison") {
       floorValue = 0;
-      floorNbValue = parseInt(clientInfo.niveaux, 10);
+      floorNbValue = clientInfo.niveaux || 0;
     } else {
-      floorValue = parseInt(clientInfo.etages, 10);
-      floorNbValue = parseInt(clientInfo.niveaux, 10);
+      floorValue = clientInfo.etages;
+      floorNbValue = clientInfo.niveaux;
     }
 
     return {
@@ -97,21 +97,19 @@ const index = () => {
       bedroomNb: clientInfo.chambres,
       floor: floorValue,
       floorNb: floorNbValue,
-      gardenSurface: clientInfo.type === "maison" ? clientInfo.jardin || 0 : 0,
+      gardenSurface: clientInfo.type === "maison" ? 150 : 0,
       constructionYear: clientInfo.annee,
       parkingNb: (clientInfo.parking ? 1 : 0) + (clientInfo.box ? 1 : 0),
       terraceNb: clientInfo.terrasse ? 1 : 0,
       balconyNb: clientInfo.balcon ? 1 : 0,
       cellar: clientInfo.cave ? 1 : 0,
-      concierge: 0, // Vous n'avez pas de données concernant le concierge. J'ai mis 0 par défaut
       elevator: clientInfo.ascenseur ? 1 : 0,
       swimmingPool: clientInfo.piscine ? 1 : 0,
       ratingEmission: ratingMapping[clientInfo.ges],
       ratingEnergyConso: ratingMapping[clientInfo.dpe],
       standing: standingMapping[clientInfo.standing],
       view: viewMapping[clientInfo.vue],
-      orientation: orientationMapping[clientInfo.oriantation[0]], // Utilise le premier élément d'orientation pour le moment
-      thirdPartyFees: 0, // J'ai mis 0 par défaut car vous n'avez pas mentionné de données liées aux frais tri-partites
+      orientation: orientationMapping[clientInfo.oriantation[0]],
     };
   }
 
