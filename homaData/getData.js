@@ -37,6 +37,7 @@ const updateMockedData = () => {
 };
 
 export const getEstimation = (params) => {
+  console.log(params);
   const mocked = false;
   const apiKey = process.env.NEXT_PUBLIC_HOMADATA_API_KEY; // Remplacez YOUR_API_KEY par votre clé d'API réelle
   const apiDomain = "https://www.avenue-immo.com/"; // Remplacez YOUR_API_DOMAIN par votre domaine API réel
