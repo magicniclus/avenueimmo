@@ -146,7 +146,7 @@ const index = () => {
                 "Une erreur lors de l'ajout de l'estimation:",
                 error
               );
-              storeFirebaseError(error, "Resultat"); // Remplacez "NomDeLaPage" par le nom de votre page ou par une variable correspondante
+              // storeFirebaseError(error, "Resultat"); // Remplacez "NomDeLaPage" par le nom de votre page ou par une variable correspondante
               throw error; // Rejette l'erreur pour qu'elle soit capturée par le catch final
             });
         })
