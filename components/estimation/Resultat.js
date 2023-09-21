@@ -61,7 +61,7 @@ const Resultat = () => {
         <div className="mt-5">
           <p className="text-md font-light text-blue-500">Prix net vendeur</p>
           <h2 className="text-6xl mt-1 text-blue-500">
-            {formatNumberWithSpaces(Math.floor(price))}€
+            {formatNumberWithSpaces(Math.floor(price * 0.91))}€
           </h2>
         </div>
         <p className=" text-blue-500">
@@ -72,13 +72,13 @@ const Resultat = () => {
         <div className="flex mt-3 items-end">
           <p className="text-gray-700">Prix bas:</p>
           <h2 className="ml-2 text-2xl text-blue-500">
-            {formatNumberWithSpaces(Math.floor(priceMin))}€
+            {formatNumberWithSpaces(Math.floor(priceMin * 0.91))}€
           </h2>
         </div>
         <div className="flex mt-3 items-end">
           <p className="text-gray-700">Prix haut:</p>
           <h2 className="ml-2 text-2xl text-blue-500">
-            {formatNumberWithSpaces(Math.floor(priceMax))}€
+            {formatNumberWithSpaces(Math.floor(priceMax * 0.91))}€
           </h2>
         </div>
       </div>
