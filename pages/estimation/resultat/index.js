@@ -12,7 +12,7 @@ import {
 } from "../../../firebase/dataManager";
 
 import Loader from "../../../components/loader/Loader";
-import ContainerEstimationTwo from "../../../components/layout/ContainerEstimationTwo";
+import ContainerEstimationThree from "../../../components/layout/ContainerEstimationThree";
 import EstimationLayout from "../../../components/layout/EstimationLayout";
 import Resultat from "../../../components/estimation/Resultat";
 
@@ -20,6 +20,9 @@ import { v4 as uuidv4 } from "uuid";
 import HeaderWithoutNav from "../../../components/header/HeaderWithoutNav";
 
 import Head from "next/head";
+import Approfondire from "../../../components/Approfondire";
+import Footer from "../../../components/footer/Footer";
+import Pourquoi from "../../../components/Pourquoi";
 
 const index = () => {
   const dispatch = useDispatch();
@@ -113,9 +116,9 @@ const index = () => {
     };
   }
 
-  useEffect(() => {
-    storePageView("Résultat");
-  }, []);
+  // useEffect(() => {
+  //   // storePageView("Résultat");
+  // }, []);
 
   useEffect(() => {
     if (adresse) {
@@ -204,19 +207,22 @@ const index = () => {
       </Head>
       <HeaderWithoutNav />
       <EstimationLayout>
-        <ContainerEstimationTwo>
+        <ContainerEstimationThree>
           {isLoading && (
             <div className="fixed top-0 left-0 w-full h-full bg-white flex items-center justify-center z-10">
               <Loader />
             </div>
           )}
-          <div className="lg:min-h-[600px] flex flex-col justify-between  w-full lg:w-full">
-            <div className="flex justify-between">
+          <div className="lg:min-h-[600px] flex flex-col justify-between items-center lg:w-full">
+            <div className="flex justify-between items-center w-[100%]">
               <Resultat />
             </div>
+            <Approfondire />
+            <Pourquoi />
           </div>
-        </ContainerEstimationTwo>
+        </ContainerEstimationThree>
       </EstimationLayout>
+      <Footer />
     </>
   );
 };
