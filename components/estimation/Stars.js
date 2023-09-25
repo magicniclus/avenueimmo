@@ -17,7 +17,7 @@ const Stars = (props) => {
   const partialFill = (note - fullStars) * 100;
 
   return (
-    <div className="mt-7">
+    <div className="mt-10 flex flex-col items-center">
       <h3 style={{ color: primaryColor }}>Niveau de confiance:</h3>
       <div className="flex">
         {[...Array(5)].map((_, index) => {
