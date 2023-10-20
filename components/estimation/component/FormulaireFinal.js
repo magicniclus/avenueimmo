@@ -189,7 +189,7 @@ const FormulaireFinal = () => {
             type="submit"
             className="rounded-md px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 max-w-[170px] w-full bg-blue-500"
           >
-            Voir mon estiamtion
+            Voir mon estimation
           </button>
         </div>
       </div>
