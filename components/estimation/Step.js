@@ -15,6 +15,7 @@ import VueOriantation from "./component/VueOriantation";
 import Travaux from "./component/Travaux";
 import Atouts from "./component/Atouts";
 import ClassementEnergetique from "./component/ ClassementEnergetique";
+import Souhaits from "./component/Souhaits";
 import Objectifs from "./component/Objectifs";
 
 const Step = () => {
@@ -40,6 +41,7 @@ const Step = () => {
   const atouts = useSelector((state) => state?.clientInfomation?.atouts);
   const dpe = useSelector((state) => state?.clientInfomation?.dpe);
   const ges = useSelector((state) => state?.clientInfomation?.ges);
+  const prixVoulu = useSelector((state) => state?.clientInfomation?.prixVoulu);
   const contrat = useSelector((state) => state?.clientInfomation?.contrat);
   const vente = useSelector((state) => state?.clientInfomation?.vente);
 
@@ -93,6 +95,9 @@ const Step = () => {
         return <ClassementEnergetique />;
 
       case 14:
+        return <Souhaits />;
+
+      case 15:
         return <Objectifs />;
 
       default:
@@ -154,6 +159,9 @@ const Step = () => {
         return !dpe || !ges;
 
       case 14:
+        return !prixVoulu;
+
+      case 15:
         return !contrat || !vente;
 
       default:
@@ -177,9 +185,9 @@ const Step = () => {
             backgroundColor: "#3b82f6",
             opacity: isButtonDisabled() ? 0.6 : 1,
           }}
-          onClick={(e) => (step === 14 ? handleRoute(e) : handleStep(e))}
+          onClick={(e) => (step === 15 ? handleRoute(e) : handleStep(e))}
         >
-          {step === 14 ? "Voir l'estimation" : "Suivant"}
+          {step === 15 ? "Voir l'estimation" : "Suivant"}
         </button>
         {error ? (
           <p className="text-red-300 text-xs font-light lg:w-3/5 text-start ml-2">
