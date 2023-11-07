@@ -6,6 +6,10 @@ const initState = {
   clientInfomation: {},
   simulateurStep: 15,
   stepInProgress: 2,
+  pro: {
+    totalStep: 6,
+    stepInProgress: 0,
+  },
 };
 
 const reducer = (state = initState, action) => {
@@ -172,6 +176,15 @@ const reducer = (state = initState, action) => {
       return {
         ...state,
         stepInProgress: state.stepInProgress - 1,
+      };
+
+    case "UPDATE_PRO_STEP":
+      return {
+        ...state,
+        pro: {
+          ...state.pro,
+          stepInProgress: state.pro.stepInProgress + 1,
+        },
       };
 
     default:
