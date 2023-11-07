@@ -159,7 +159,7 @@ const Step = () => {
         return !dpe || !ges;
 
       case 14:
-        return !prixVoulu;
+        return false;
 
       case 15:
         return !contrat || !vente;
