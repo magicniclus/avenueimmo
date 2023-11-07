@@ -91,16 +91,16 @@ const EtapeEstimationContainer = () => {
         select: stepInProgress === 13 ? true : false,
       },
       {
-        name: "Souhait",
-        done: clientInformation?.prixVoulu ? true : false,
+        name: "Souhaits",
+        done: stepInProgress >= 14 ? true : false,
         select: stepInProgress === 14 ? true : false,
       },
       {
-        name: "Objectif",
+        name: "Objectifs",
         done:
           clientInformation?.contrat && clientInformation?.vente
             ? true
-            : false && stepInProgress === 14
+            : false && stepInProgress === 15
             ? true
             : false,
         select: stepInProgress === 15 ? true : false,
