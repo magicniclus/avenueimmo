@@ -18,7 +18,7 @@ const ProgressBar = () => {
   const currentSlug = pathSegments[1];
 
   const handleClick = () => {
-    if (step === 14) {
+    if (step === 15) {
       dispatch({
         type: "SET_CLIENT_INFORMATION",
         payload: {
