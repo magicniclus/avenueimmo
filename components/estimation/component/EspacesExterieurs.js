@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import CardWithSize from "./CardWithSize";
+import InputNumber from "./InputNumber";
 
 const EspacesExterieurs = () => {
   const dispatch = useDispatch();
   const [selectedGarden, setSelectedGarden] = useState(null);
   const [selectedTerrasse, setSelectedTerrasse] = useState(null);
   const [selectedBalcon, setSelectedBalcon] = useState(null);
+  const [surfaceGarden, setSurfaceGarden] = useState(null);
 
   useEffect(() => {
     if (selectedGarden !== null) {
@@ -42,7 +44,18 @@ const EspacesExterieurs = () => {
         payload: { balcon: false },
       });
     }
-  }, [selectedGarden, selectedBalcon, selectedTerrasse]);
+    if (surfaceGarden !== null) {
+      dispatch({
+        type: "SET_CLIENT_INFORMATION",
+        payload: { surfaceGarden: surfaceGarden },
+      });
+    } else {
+      dispatch({
+        type: "SET_CLIENT_INFORMATION",
+        payload: { surfaceGarden: 0 },
+      });
+    }
+  }, [selectedGarden, selectedBalcon, selectedTerrasse, surfaceGarden]);
 
   return (
     <>
@@ -66,6 +79,18 @@ const EspacesExterieurs = () => {
           setSelected={setSelectedBalcon}
         />
       </div>
+      {selectedGarden && (
+        <div className="flex flex-col mt-5">
+          <h3 className="font-light text-sm mb-3 text-gray-700">
+            Quel est la surface de votre jardin ?
+          </h3>
+          <InputNumber
+            placeholder="Surface"
+            value={surfaceGarden}
+            onChange={setSurfaceGarden}
+          />
+        </div>
+      )}
     </>
   );
 };
