@@ -7,7 +7,7 @@ const initState = {
   simulateurStep: 15,
   stepInProgress: 2,
   pro: {
-    totalStep: 10,
+    totalStep: 9,
     stepInProgress: 0,
     elements: {},
   },
