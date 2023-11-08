@@ -13,10 +13,10 @@ const TextArea = (props) => {
   };
 
   return (
-    <TextArea
+    <textarea
       value={value}
       onChange={(e) => setValue(e.target.value)}
-      className="max-w-[500px] w-full border px-4 py-3 rounded-md font-light text-normal outline-none text-gray-700"
+      className="max-w-[500px] w-full border px-4 py-3 rounded-md font-light text-normal outline-none text-gray-700 min-h-[200px]"
       placeholder={placeholder || "Saisisez votre texte..."}
     />
   );
