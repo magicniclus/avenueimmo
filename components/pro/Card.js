@@ -17,7 +17,7 @@ const Card = (props) => {
   return (
     <div
       onClick={handleClick}
-      className={`mr-5 max-w-[500px] w-full xs:mr-0 relative py-5 px-5 bg-white border rounded-md flex justify-center items-center cursor-pointer transition-all duration-100 hover:shadow-lg mt-2 ${
+      className={`w-full xs:mr-0 relative py-5 px-5 bg-white border rounded-md flex justify-center items-center cursor-pointer transition-all duration-100 hover:shadow-lg mt-2 ${
         isSelected ? "shadow-md" : ""
       }`}
       style={{ borderColor: "#3b82f6" }}
