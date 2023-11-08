@@ -25,8 +25,10 @@ const Contact = () => {
       phonePattern.test(phone)
     ) {
       dispatch({
-        type: "SET_USER_INFORMATION",
-        payload: { firstName, lastName, email, phone },
+        type: "SET_PRO_INFORMATION",
+        payload: {
+          informationsPersonnelles: { firstName, lastName, email, phone },
+        },
       });
     }
   }, [firstName, lastName, email, phone]);
