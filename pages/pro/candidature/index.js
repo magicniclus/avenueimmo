@@ -15,6 +15,7 @@ import Objectifs from "../../../components/pro/etapes/Objectifs";
 import Aquisition from "../../../components/pro/etapes/Aquisition";
 import NomAgence from "../../../components/pro/etapes/NomAgence";
 import Pourquoi from "../../../components/pro/etapes/Pourquoi";
+import Contact from "../../../components/pro/etapes/Contact";
 
 const index = () => {
   const router = useRouter();
@@ -59,6 +60,9 @@ const index = () => {
 
       case 8:
         return <Pourquoi />;
+
+      case 9:
+        return <Contact />;
 
       default:
         return <Start />;
@@ -107,9 +111,11 @@ const index = () => {
           />
         </div>
       </header>
-      <main className="lg:w-full sm:w-11/12 w-full max-w-[1250px] px-5 py-5 lg:px-20 flex items-center justify-center flex-col relative z-20 mx-auto">
+      <main className="lg:w-full sm:w-11/12 w-full max-w-[550px] px-5 py-5 lg:px-20 flex items-center justify-center flex-col relative z-20 mx-auto">
         <ProgressBar />
-        <section className="mt-5 max-w-[500px]">{handleSection()}</section>
+        <section className="mt-5 max-w-[550px] w-full">
+          {handleSection()}
+        </section>
         <div className="mt-10">
           <button
             type="button"
@@ -119,8 +125,8 @@ const index = () => {
             }}
             onClick={handleStep}
           >
-            {step === 15
-              ? "Voir l'estimation"
+            {step === totalStep
+              ? "Resultat"
               : step === 0
               ? "Démarrer"
               : "Suivant"}
