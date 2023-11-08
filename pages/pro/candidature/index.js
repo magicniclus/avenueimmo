@@ -16,15 +16,43 @@ import Aquisition from "../../../components/pro/etapes/Aquisition";
 import NomAgence from "../../../components/pro/etapes/NomAgence";
 import Pourquoi from "../../../components/pro/etapes/Pourquoi";
 import Contact from "../../../components/pro/etapes/Contact";
+import { ca } from "@mapbox/mapbox-gl-geocoder/lib/exceptions";
 
 const index = () => {
   const router = useRouter();
 
   const dispatch = useDispatch();
 
-  const getStep = useSelector((state) => state.pro.stepInProgress);
   const [step, setStep] = useState(0);
+  const [disabled, setDisabled] = useState(false);
+
+  const getStep = useSelector((state) => state.pro.stepInProgress);
   const totalStep = useSelector((state) => state.pro.totalStep);
+
+  const status = useSelector((state) => state.pro.elements?.status);
+  const secteur = useSelector((state) => state.pro.elements?.secteur);
+  const experience = useSelector((state) => state.pro.elements?.experience);
+  const nbrVente = useSelector((state) => state.pro.elements?.nbrVente);
+  const objectifs = useSelector((state) => state.pro.elements?.objectifs);
+  const pige = useSelector((state) => state.pro.elements?.pige);
+  const porte = useSelector((state) => state.pro.elements?.porte);
+  const lead = useSelector((state) => state.pro.elements?.lead);
+  const bouche = useSelector((state) => state.pro.elements?.bouche);
+  const promoteurs = useSelector((state) => state.pro.elements?.promoteurs);
+  const nomAgence = useSelector((state) => state.pro.elements?.nomAgence);
+  const candidature = useSelector((state) => state.pro.elements?.candidature);
+  const lastName = useSelector(
+    (state) => state.pro.elements?.informationsPersonnelles?.lastName
+  );
+  const firstName = useSelector(
+    (state) => state.pro.elements?.informationsPersonnelles?.firstName
+  );
+  const email = useSelector(
+    (state) => state.pro.elements?.informationsPersonnelles?.email
+  );
+  const phone = useSelector(
+    (state) => state.pro.elements?.informationsPersonnelles?.phone
+  );
 
   useEffect(() => {
     if (getStep) {
@@ -69,11 +97,48 @@ const index = () => {
     }
   };
 
+  const handleDisabled = () => {
+    switch (step) {
+      case 0:
+        return false;
+
+      case 1:
+        return status ? false : true;
+
+      case 2:
+        return secteur ? false : true;
+
+      case 3:
+        return experience ? false : true;
+
+      case 4:
+        return nbrVente ? false : true;
+
+      case 5:
+        return objectifs ? false : true;
+
+      case 6:
+        return pige || porte || lead || bouche || promoteurs ? false : true;
+
+      case 7:
+        return nomAgence ? false : true;
+
+      case 8:
+        return candidature ? false : true;
+
+      case 9:
+        return firstName && lastName && email && phone ? false : true;
+
+      default:
+        return true;
+    }
+  };
+
   const handleStep = () => {
     if (step < totalStep) {
       dispatch({ type: "UPDATE_PRO_STEP" });
     } else {
-      router.push(`/pro/candidature/resultat`);
+      // router.push(`/pro/candidature/resultat`);
     }
   };
 
@@ -118,10 +183,14 @@ const index = () => {
         </section>
         <div className="mt-10">
           <button
+            disabled={handleDisabled()}
             type="button"
-            className={`text-white py-4 px-7 rounded-lg transition ease-in-out duration-100 w-max`}
+            className={`text-white py-4 px-7 rounded-lg transition ease-in-out duration-100 w-max ${
+              !handleDisabled() ? "bg-opacity-40" : "bg-opacity-100"
+            }`}
             style={{
               backgroundColor: "#3b82f6",
+              opacity: handleDisabled() ? 0.4 : 1,
             }}
             onClick={handleStep}
           >
