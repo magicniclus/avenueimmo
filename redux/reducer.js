@@ -7,8 +7,9 @@ const initState = {
   simulateurStep: 15,
   stepInProgress: 2,
   pro: {
-    totalStep: 6,
+    totalStep: 10,
     stepInProgress: 0,
+    elements: {},
   },
 };
 
@@ -184,6 +185,18 @@ const reducer = (state = initState, action) => {
         pro: {
           ...state.pro,
           stepInProgress: state.pro.stepInProgress + 1,
+        },
+      };
+
+    case "SET_PRO_INFORMATION":
+      return {
+        ...state,
+        pro: {
+          ...state.pro,
+          elements: {
+            ...state.pro.elements,
+            ...action.payload,
+          },
         },
       };
 
