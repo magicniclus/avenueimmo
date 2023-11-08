@@ -3,15 +3,51 @@ import Card from "../Card";
 import { useDispatch } from "react-redux";
 
 const Aquisition = () => {
-  const [selectedCard, setSelectedCard] = useState("");
+  const [selectedPige, setSelectedPige] = useState("");
+  const [selectedPorte, setSelectedPorte] = useState("");
+  const [selectedLead, setSelectedLead] = useState("");
+  const [selectedBouche, setSelectedBouche] = useState("");
+  const [selectedPromoteurs, setSelectedPromoteurs] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({
-      type: "SET_PRO_INFORMATION",
-      payload: { aquisition: selectedCard },
-    });
-  }, [selectedCard]);
+    if (selectedPige !== null) {
+      dispatch({
+        type: "SET_PRO_INFORMATION",
+        payload: { pige: selectedPige },
+      });
+    }
+    if (selectedPorte !== null) {
+      dispatch({
+        type: "SET_PRO_INFORMATION",
+        payload: { porte: selectedPorte },
+      });
+    }
+    if (selectedLead !== null) {
+      dispatch({
+        type: "SET_PRO_INFORMATION",
+        payload: { lead: selectedLead },
+      });
+    }
+    if (selectedBouche !== null) {
+      dispatch({
+        type: "SET_PRO_INFORMATION",
+        payload: { bouche: selectedBouche },
+      });
+    }
+    if (selectedPromoteurs !== null) {
+      dispatch({
+        type: "SET_PRO_INFORMATION",
+        payload: { promoteurs: selectedPromoteurs },
+      });
+    }
+  }, [
+    selectedBouche,
+    selectedLead,
+    selectedPige,
+    selectedPorte,
+    selectedPromoteurs,
+  ]);
 
   return (
     <>
@@ -21,28 +57,28 @@ const Aquisition = () => {
       <div className="mt-7">
         <Card
           title="Pige"
-          selectedCard={selectedCard}
-          setSelectedCard={setSelectedCard}
+          selectedCard={selectedPige}
+          setSelectedCard={setSelectedPige}
         />
         <Card
           title="Porte-à-porte"
-          selectedCard={selectedCard}
-          setSelectedCard={setSelectedCard}
+          selectedCard={selectedPorte}
+          setSelectedCard={setSelectedPorte}
         />
         <Card
           title="Achat de leads vendeurs"
-          selectedCard={selectedCard}
-          setSelectedCard={setSelectedCard}
+          selectedCard={selectedLead}
+          setSelectedCard={setSelectedLead}
         />
         <Card
           title="Bouche-à-oreille"
-          selectedCard={selectedCard}
-          setSelectedCard={setSelectedCard}
+          selectedCard={selectedBouche}
+          setSelectedCard={setSelectedBouche}
         />
         <Card
           title="Promoteurs"
-          selectedCard={selectedCard}
-          setSelectedCard={setSelectedCard}
+          selectedCard={selectedPromoteurs}
+          setSelectedCard={setSelectedPromoteurs}
         />
       </div>
     </>
