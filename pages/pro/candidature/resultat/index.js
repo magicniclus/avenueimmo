@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Script from "next/script";
 
 const index = () => {
   return (
@@ -36,7 +37,40 @@ const index = () => {
           />
         </div>
       </header>
-      <main className="lg:w-full sm:w-11/12 w-full max-w-[550px] px-5 py-5 lg:px-20 flex items-center justify-center flex-col relative z-20 mx-auto"></main>
+      <main className="lg:w-full sm:w-11/12 w-full px-5 py-5 lg:px-20 flex items-center justify-center flex-col relative z-20 mx-auto">
+        <h1 className="text-center lg:text-4xl text-2xl lg:w-11/12 mt-10 lg:mt-3 text-gray-700 max-w-[550px]">
+          🌟 Félicitations ! 🌟
+        </h1>
+        <p className="text-center mt-5 max-w-[550px]">
+          Votre candidature a été reçue avec succès et nous sommes heureux de
+          vous informer qu'elle répond parfaitement à nos critères de sélection.
+        </p>
+        <p className="text-center mt-5 max-w-[550px]">
+          L'étape suivante est cruciale : nous vous proposons de finaliser votre
+          candidature par un entretien personnalisé. Ce sera l'occasion de
+          valider votre secteur et d'explorer ensemble les opportunités d'une
+          collaboration fructueuse.
+        </p>
+        <div className="bg-yellow-500 w-20 h-2 rounded-full my-5"></div>
+        <div
+          class="calendly-inline-widget"
+          data-url="https://calendly.com/avenue-immo/30min"
+          style={{
+            minWidth: "550px",
+            height: "800px",
+            marginTop: "20px",
+            marginBottom: "50px",
+            border: "2px solid #374151",
+            borderRadius: "10px",
+            overflow: "hidden",
+          }}
+        ></div>
+        <Script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        />
+      </main>
     </>
   );
 };
