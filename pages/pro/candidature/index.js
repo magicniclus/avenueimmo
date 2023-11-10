@@ -17,6 +17,7 @@ import NomAgence from "../../../components/pro/etapes/NomAgence";
 import Pourquoi from "../../../components/pro/etapes/Pourquoi";
 import Contact from "../../../components/pro/etapes/Contact";
 import { ca } from "@mapbox/mapbox-gl-geocoder/lib/exceptions";
+import { addEntrepriseProspect } from "../../../firebase/dataManager";
 
 const index = () => {
   const router = useRouter();
@@ -135,10 +136,56 @@ const index = () => {
   };
 
   const handleStep = () => {
+    // Vérifiez si vous n'êtes pas à la dernière étape
     if (step < totalStep) {
       dispatch({ type: "UPDATE_PRO_STEP" });
     } else {
-      // router.push(`/pro/candidature/resultat`);
+      if (
+        status &&
+        secteur &&
+        experience &&
+        nbrVente &&
+        objectifs &&
+        (pige || porte || lead || bouche || promoteurs) &&
+        nomAgence &&
+        candidature &&
+        firstName &&
+        lastName &&
+        email &&
+        phone
+      ) {
+        const currentDate = new Date().toLocaleDateString("fr-FR"); // Obtenez la date actuelle en français
+
+        const entrepriseData = {
+          status,
+          secteur,
+          experience,
+          nbrVente,
+          objectifs,
+          pige,
+          porte,
+          lead,
+          bouche,
+          promoteurs,
+          nomAgence,
+          candidature,
+          firstName,
+          lastName,
+          email,
+          phone,
+          date: currentDate, // Ajoutez la date à vos données
+        };
+
+        addEntrepriseProspect(entrepriseData)
+          .then(() => {
+            // Redirection en cas de succès
+            router.push(`/pro/candidature/resultat`);
+          })
+          .catch((error) => {
+            // Gestion de l'erreur
+            console.error("Erreur lors de l'ajout de l'entreprise:", error);
+          });
+      }
     }
   };
 
