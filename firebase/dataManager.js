@@ -224,6 +224,18 @@ export const addEstimation = async (estimationData) => {
   }
 };
 
+export const addEntrepriseProspect = async (data) => {
+  const estimationsRef = ref(db, `entrepriseProspect`);
+
+  try {
+    const newEstimationRef = push(estimationsRef); // Ceci crée une nouvelle référence avec un ID unique
+    await set(newEstimationRef, data); // Sauvegardez les données d'estimation avec cet ID unique
+    console.log(`Added new entreprise successfully.`);
+  } catch (error) {
+    console.error("Failed to add new entreprise: ", error);
+  }
+};
+
 export const setEstimation = async (estimationData) => {
   // Pointez simplement vers la racine 'estimations' sans ID ou autre
   const estimationsRef = ref(db, "estimations");
