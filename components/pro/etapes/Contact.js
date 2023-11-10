@@ -10,6 +10,7 @@ const Contact = () => {
   const phonePattern = /^(0[1-9])(?:[ _.-]?(\d{2})){4}$/;
 
   const dispatch = useDispatch();
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
