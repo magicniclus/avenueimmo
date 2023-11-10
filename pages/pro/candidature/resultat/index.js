@@ -60,7 +60,7 @@ const index = () => {
             height: "800px",
             marginTop: "20px",
             marginBottom: "50px",
-            border: "2px solid #374151",
+            boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
             borderRadius: "10px",
             overflow: "hidden",
           }}
