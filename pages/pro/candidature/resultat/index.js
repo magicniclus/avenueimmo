@@ -56,12 +56,13 @@ const index = () => {
           class="calendly-inline-widget"
           data-url="https://calendly.com/avenue-immo/30min"
           style={{
-            minWidth: "550px",
+            width: "100%",
             height: "800px",
             marginTop: "20px",
-            marginBottom: "50px",
+            marginBottom: "20px",
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
             borderRadius: "10px",
+            backgroundColor: "#C2C2C2",
             overflow: "hidden",
           }}
         ></div>
