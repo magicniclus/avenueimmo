@@ -18,13 +18,14 @@ const Souhaits = () => {
         className="text-2xl font-light lg:my-0 my-5"
         style={{ color: "#3b82f6" }}
       >
-        A quel prix souhaitez-vous vendre ?
+        A quel prix souhaitez-vous vendre ? <br />
+        <span className="text-lg">(N'influence pas le resultat)</span>
       </h2>
       <div className="flex">
         <InputNumber
           value={value}
           onChange={setValue}
-          placeholder="Prix souhaité"
+          placeholder="Prix"
           type="€"
         />
       </div>
