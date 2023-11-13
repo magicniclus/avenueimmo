@@ -4,69 +4,72 @@ import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";
 const faqs = [
   {
     id: 1,
-    question: "Pourquoi est-il important d'estimer son bien immobilier ?",
+    question:
+      "Quels sont les bénéfices d'être le partenaire unique d'Avenue-Immo dans mon secteur ?",
     answer:
-      "L'estimation immobilière permet de déterminer la valeur réelle de votre bien sur le marché actuel. Cela vous aide à fixer un prix de vente ou de location adapté, évitant ainsi une sous-évaluation ou une surévaluation qui pourrait dissuader les potentiels acheteurs ou locataires.",
+      "En tant que partenaire unique dans votre secteur, vous bénéficiez d'une exclusivité totale, ce qui maximise votre visibilité et vos opportunités de capter des clients potentiels sans concurrence directe sur votre zone géographique.",
   },
   {
     id: 2,
-    question: "Comment avenue-immo assure-t-il une estimation précise ?",
+    question:
+      "Comment fonctionne le modèle d'abonnement pour les partenaires ?",
     answer:
-      "Avenue-immo utilise des données récoltées en temps réel et des algorithmes avancés pour fournir une estimation aussi précise que possible. Nous analysons les transactions récentes, les tendances du marché et d'autres facteurs pertinents pour votre bien.",
+      "Les partenaires payent un abonnement fixe pour accéder à notre plateforme. Cet abonnement couvre l'utilisation de notre site performant et l'accès à une génération illimitée de prospects, sans frais additionnels.",
   },
   {
     id: 3,
     question:
-      "Pourquoi compléter une estimation en ligne par une estimation physique ?",
+      "Avenue-Immo prend-il une marge sur les prospects générés par les partenaires ?",
     answer:
-      "L'estimation en ligne offre une première approximation basée sur des données générales. Une estimation physique permet d'appréhender les spécificités de votre bien, comme son état, ses aménagements ou sa localisation exacte, garantissant ainsi une évaluation plus précise et personnalisée.",
+      "Non, Avenue-Immo ne prend aucune marge sur les prospects. Tout ce que vous générez via notre plateforme est à vous, sans frais supplémentaires.",
   },
   {
     id: 4,
-    question: "Comment les données sont-elles récoltées en temps réel ?",
+    question:
+      "Comment le site d'Avenue-Immo aide-t-il à générer des prospects ?",
     answer:
-      "Nous utilisons des technologies avancées et des partenariats avec diverses bases de données immobilières pour obtenir des informations actualisées sur les transactions, les offres et les demandes dans différentes régions.",
+      "Notre site est optimisé pour une performance maximale, avec des outils avancés de génération de leads et une interface utilisateur intuitive, permettant aux partenaires de générer un nombre illimité de prospects.",
   },
   {
     id: 5,
     question:
-      "Mes données personnelles sont-elles en sécurité avec avenue-immo ?",
+      "Y a-t-il une limite au nombre de prospects qu'un partenaire peut générer ?",
     answer:
-      "Absolument. La protection de vos données est notre priorité. Nous utilisons des protocoles de sécurité avancés pour garantir la confidentialité et la sécurité de vos informations. Elles ne sont jamais partagées sans votre consentement explicite.",
+      "Non, il n'y a pas de limite. Nos partenaires peuvent générer autant de prospects qu'ils le souhaitent, maximisant ainsi leur potentiel de croissance.",
   },
   {
     id: 6,
     question:
-      "Combien de temps prend une estimation en ligne sur avenue-immo ?",
+      "Comment puis-je devenir partenaire exclusif d'Avenue-Immo dans ma région ?",
     answer:
-      "L'estimation en ligne est conçue pour être rapide et efficace. En général, cela ne prend que quelques minutes pour obtenir une première approximation de la valeur de votre bien.",
+      "Pour devenir partenaire exclusif, soumettez votre candidature via notre site. Nous évaluons chaque candidature pour assurer une adéquation parfaite avec notre philosophie et nos standards de qualité.",
   },
   {
     id: 7,
-    question:
-      "Quelle est la différence entre une estimation en ligne et une évaluation professionnelle ?",
+    question: "Quel soutien Avenue-Immo offre-t-il à ses partenaires ?",
     answer:
-      "L'estimation en ligne est basée sur des données générales et offre une première idée de la valeur. Une évaluation professionnelle, en revanche, est réalisée par un expert qui visite le bien, analyse ses caractéristiques uniques et fournit une évaluation plus détaillée et précise.",
+      "Nous offrons un soutien complet, incluant une formation initiale, un support technique continu, et des outils marketing pour vous aider à optimiser votre utilisation de la plateforme et à maximiser votre génération de leads.",
   },
   {
     id: 8,
-    question: "L'estimation en ligne est-elle gratuite ?",
+    question:
+      "Existe-t-il des critères spécifiques pour être accepté en tant que partenaire ?",
     answer:
-      "Oui, l'estimation en ligne sur avenue-immo est totalement gratuite. Elle vise à offrir aux propriétaires une première idée de la valeur de leur bien.",
+      "Oui, nous recherchons des partenaires qui ont une solide connaissance de leur marché local, un engagement envers un service client de qualité, et la capacité de pleinement exploiter les outils et ressources que nous offrons.",
   },
   {
     id: 9,
     question:
-      "Puis-je faire confiance à l'estimation fournie par avenue-immo ?",
+      "Comment Avenue-Immo assure-t-il la qualité et la pertinence des prospects ?",
     answer:
-      "Oui, nos estimations sont basées sur des données fiables et des algorithmes avancés. Cependant, pour une évaluation la plus précise possible, nous recommandons toujours de compléter l'estimation en ligne par une évaluation professionnelle sur place.",
+      "Nous utilisons des algorithmes avancés pour cibler des prospects qualifiés et pertinents, assurant ainsi que les leads générés sont de haute qualité et en adéquation avec les services offerts par nos partenaires.",
   },
   {
     id: 10,
     question:
-      "Comment avenue-immo se distingue-t-il des autres sites d'estimation ?",
+      "Quels avantages ai-je à choisir Avenue-Immo plutôt qu'une autre plateforme ?",
     answer:
-      "Avenue-immo se concentre sur la précision, l'actualité des données et la facilité d'utilisation. Notre plateforme est conçue pour offrir aux utilisateurs une expérience fluide tout en garantissant des estimations fiables basées sur des données récentes et pertinentes.",
+      "Avenue-Immo se distingue par son modèle de partenariat exclusif, sa politique de non-marge sur les leads, son site hautement performant, et son engagement envers la réussite et la croissance de ses partenaires.",
   },
 ];
 
