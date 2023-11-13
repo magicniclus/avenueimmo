@@ -45,7 +45,7 @@ const index = () => {
       </header>
       <main className="lg:w-full sm:w-11/12 w-full px-5 py-5 lg:px-20 flex items-center justify-center flex-col relative z-20 mx-auto">
         <h1 className="text-center lg:text-4xl text-2xl lg:w-11/12 mt-10 lg:mt-3 text-gray-700 max-w-[550px]">
-          🌟 Félicitations ! 🌟
+          Félicitations !
         </h1>
         <p className="text-center mt-5 max-w-[550px]">
           Votre candidature a été reçue avec succès et nous sommes heureux de
