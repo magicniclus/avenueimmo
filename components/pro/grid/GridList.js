@@ -10,46 +10,32 @@ import {
 
 const actions = [
   {
-    title: "Request time off",
+    title: "Réactivité garantie",
     href: "#",
     icon: ClockIcon,
     iconForeground: "text-teal-700",
     iconBackground: "bg-teal-50",
   },
   {
-    title: "Benefits",
+    title: "Qualité certifiée",
     href: "#",
     icon: CheckBadgeIcon,
     iconForeground: "text-purple-700",
     iconBackground: "bg-purple-50",
   },
   {
-    title: "Schedule a one-on-one",
+    title: "Partenaires 100% exclusifs",
     href: "#",
     icon: UsersIcon,
     iconForeground: "text-sky-700",
     iconBackground: "bg-sky-50",
   },
   {
-    title: "Payroll",
+    title: "Contact à prix coutant",
     href: "#",
     icon: BanknotesIcon,
     iconForeground: "text-yellow-700",
     iconBackground: "bg-yellow-50",
-  },
-  {
-    title: "Submit an expense",
-    href: "#",
-    icon: ReceiptRefundIcon,
-    iconForeground: "text-rose-700",
-    iconBackground: "bg-rose-50",
-  },
-  {
-    title: "Training",
-    href: "#",
-    icon: AcademicCapIcon,
-    iconForeground: "text-indigo-700",
-    iconBackground: "bg-indigo-50",
   },
 ];
 
@@ -90,19 +76,19 @@ const GridList = () => {
               </div>
               <div className="mt-8">
                 <h3 className="text-base font-semibold leading-6 text-gray-900">
-                  <a href={action.href} className="focus:outline-none">
+                  <div className="focus:outline-none">
                     {/* Extend touch target to entire panel */}
                     <span className="absolute inset-0" aria-hidden="true" />
                     {action.title}
-                  </a>
+                  </div>
                 </h3>
-                <p className="mt-2 text-sm text-gray-500">
+                {/* <p className="mt-2 text-sm text-gray-500">
                   Doloribus dolores nostrum quia qui natus officia quod et
                   dolorem. Sit repellendus qui ut at blanditiis et quo et
                   molestiae.
-                </p>
+                </p> */}
               </div>
-              <span
+              {/* <span
                 className="pointer-events-none absolute right-6 top-6 text-gray-300 group-hover:text-gray-400"
                 aria-hidden="true"
               >
@@ -113,7 +99,7 @@ const GridList = () => {
                 >
                   <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z" />
                 </svg>
-              </span>
+              </span> */}
             </div>
           ))}
         </div>
