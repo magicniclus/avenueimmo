@@ -3,7 +3,7 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Estimer un bien", href: "#" },
+  { name: "Estimer un bien", href: "/" },
   { name: "Acheter un bien", href: "#" },
   { name: "Recommandation", href: "#" },
 ];
