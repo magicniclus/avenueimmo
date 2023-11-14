@@ -51,11 +51,7 @@ const index = () => {
       <Header />
       <main className="w-full flex justify-center items-center flex-col min-h-[calc(100vh-94px)]">
         <h1 className="text-xl font-bold text-blue-500">Contactez-nous</h1>
-        <form
-          action="#"
-          method="POST"
-          className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
-        >
+        <form action="#" method="POST" className="mt-20">
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
