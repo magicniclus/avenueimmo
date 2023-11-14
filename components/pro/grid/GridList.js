@@ -11,6 +11,7 @@ import {
 const actions = [
   {
     title: "Réactivité garantie",
+    text: "Tous les prospects sont envoyé dans la minute",
     href: "#",
     icon: ClockIcon,
     iconForeground: "text-teal-700",
@@ -18,6 +19,7 @@ const actions = [
   },
   {
     title: "Qualité certifiée",
+    text: "Tous les prospects sont qualifiés par nos soins",
     href: "#",
     icon: CheckBadgeIcon,
     iconForeground: "text-purple-700",
@@ -25,6 +27,7 @@ const actions = [
   },
   {
     title: "Partenaires 100% exclusifs",
+    text: "Un seul partenaire par secteur",
     href: "#",
     icon: UsersIcon,
     iconForeground: "text-sky-700",
@@ -32,6 +35,7 @@ const actions = [
   },
   {
     title: "Contact à prix coutant",
+    text: "Uniquement les frais publicitaires",
     href: "#",
     icon: BanknotesIcon,
     iconForeground: "text-yellow-700",
@@ -82,11 +86,7 @@ const GridList = () => {
                     {action.title}
                   </div>
                 </h3>
-                {/* <p className="mt-2 text-sm text-gray-500">
-                  Doloribus dolores nostrum quia qui natus officia quod et
-                  dolorem. Sit repellendus qui ut at blanditiis et quo et
-                  molestiae.
-                </p> */}
+                <p className="mt-2 text-sm text-gray-500">{action.text}</p>
               </div>
               {/* <span
                 className="pointer-events-none absolute right-6 top-6 text-gray-300 group-hover:text-gray-400"
