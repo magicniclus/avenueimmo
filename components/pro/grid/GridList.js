@@ -10,14 +10,6 @@ import {
 
 const actions = [
   {
-    title: "Réactivité garantie",
-    text: "Recevez instantanément par email tous les prospects pour maximiser vos opportunités de conversion.",
-    href: "#",
-    icon: ClockIcon,
-    iconForeground: "text-teal-700",
-    iconBackground: "bg-teal-50",
-  },
-  {
     title: "Qualité certifiée",
     text: "Nous qualifions chaque prospect avec un processus rigoureux incluant une vérification téléphonique pour assurer leur pertinence.",
     href: "#",
@@ -40,6 +32,14 @@ const actions = [
     icon: BanknotesIcon,
     iconForeground: "text-yellow-700",
     iconBackground: "bg-yellow-50",
+  },
+  {
+    title: "Réactivité garantie",
+    text: "Recevez instantanément par email tous les prospects pour maximiser vos opportunités de conversion.",
+    href: "#",
+    icon: ClockIcon,
+    iconForeground: "text-teal-700",
+    iconBackground: "bg-teal-50",
   },
 ];
 
