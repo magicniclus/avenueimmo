@@ -27,30 +27,32 @@ const index = () => {
   return (
     <>
       <Head>
-        <title>Avenue-Immo : Estimation Immobilière Gratuite en Ligne</title>
+        <title>
+          Contact Avenue-Immo : Votre Partenaire Immobilier de Confiance
+        </title>
         <meta
           name="description"
-          content="Découvrez la valeur de votre bien immobilier en quelques clics avec Avenue-Immo. Notre estimateur en ligne gratuit vous fournit une évaluation précise basée sur les dernières tendances du marché."
+          content="Contactez Avenue-Immo pour des conseils experts en immobilier. Notre équipe est là pour répondre à toutes vos questions et vous aider dans vos projets immobiliers."
         />
         <meta
           name="keywords"
-          content="estimation immobilière, estimation gratuite, estimateur en ligne, valeur immobilière, marché immobilier"
+          content="contact immobilier, Avenue-Immo, assistance immobilière, services immobiliers, aide immobilière"
         />
         <meta
           property="og:title"
-          content="Avenue-Immo : Estimation Immobilière Gratuite en Ligne"
+          content="Contact Avenue-Immo : Votre Partenaire Immobilier de Confiance"
         />
         <meta
           property="og:description"
-          content="Découvrez la valeur de votre bien immobilier en quelques clics avec Avenue-Immo. Notre estimateur en ligne gratuit vous fournit une évaluation précise basée sur les dernières tendances du marché."
+          content="Besoin d'assistance dans votre projet immobilier ? Contactez Avenue-Immo dès aujourd'hui pour bénéficier de conseils d'experts et d'un accompagnement personnalisé."
         />
-        <meta property="og:image" content="URL_DE_VOTRE_IMAGE_EN_ÉVIDENCE" />
-        <meta property="og:url" content="https://www.avenue-immo.com" />
-        <link rel="canonical" href="https://www.avenue-immo.com" />
+        <meta property="og:image" content="URL_DE_VOTRE_IMAGE_DE_CONTACT" />
+        <meta property="og:url" content="https://www.avenue-immo.com/contact" />
+        <link rel="canonical" href="https://www.avenue-immo.com/contact" />
       </Head>
-      <Header />
+
       <main className="w-full flex justify-center items-center flex-col min-h-[calc(100vh-94px)]">
-        <h1 className="text-xl font-bold text-blue-500">Contactez-nous</h1>
+        <h1 className="text-2xl font-bold text-blue-500">Contactez-nous</h1>
         <form action="#" method="POST" className="mt-20">
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
