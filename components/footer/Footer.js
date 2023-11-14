@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { setNewsletter } from "../../firebase/dataManager";
+import SelectWithIcon from "../estimation/component/SelectWithIcon";
 
 const isValidEmail = (email) => {
   const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -14,6 +15,21 @@ const navigation = {
       name: "Politique de confidentialité",
       href: "/politique-de-confidentialite",
     },
+  ],
+  partenaires: [
+    { name: "Devenir partenaire", href: "/partner" },
+    { name: "Nos partenaires", href: "/partner" },
+  ],
+  services: [
+    { name: "Estimation en ligne", href: "/estimation" },
+    { name: "Vendre", href: "/" },
+    { name: "Acheter", href: "/" },
+    { name: "Louer", href: "/" },
+    { name: "Investir", href: "/" },
+  ],
+  Utiles: [
+    { name: "Espace press", href: "/" },
+    { name: "Contact", href: "/contact" },
   ],
 };
 
@@ -60,8 +76,59 @@ export default function Footer() {
       </h2>
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-20 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="grid grid-cols-2 gap-8 xl:col-span-2">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+          <div className="grid grid-cols-1 gap-8 xl:col-span-2">
+            <div className="md:grid md:grid-cols-4 md:gap-8">
+              <div className="mt-10 md:mt-0">
+                <h3 className="text-sm font-semibold leading-6 text-white">
+                  Services
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.services.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-sm leading-6 text-gray-300 hover:text-white"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-10 md:mt-0">
+                <h3 className="text-sm font-semibold leading-6 text-white">
+                  Partner
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.partenaires.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-sm leading-6 text-gray-300 hover:text-white"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-10 md:mt-0">
+                <h3 className="text-sm font-semibold leading-6 text-white">
+                  Utiles
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.Utiles.map((item) => (
+                    <li key={item.name}>
+                      <a
+                        href={item.href}
+                        className="text-sm leading-6 text-gray-300 hover:text-white"
+                      >
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-white">
                   Legal
@@ -131,6 +198,25 @@ export default function Footer() {
                 {notification.message}
               </div>
             )}
+          </div>
+        </div>
+        <div className="py-10 flex justify-between">
+          <a
+            className="text-sm font-semibold leading-6 text-white"
+            href="mailto:contact@avenue-immo.com"
+          >
+            contact@avenue-immo.com
+          </a>
+          <div className="flex flex-col">
+            <label
+              htmlFor="language"
+              className="text-sm font-semibold leading-6 text-white"
+            >
+              Language :
+            </label>
+            <select className="max-w-[150px] mt-3 border px-4 py-1 rounded-md font-light text-sm cursor-pointer text-gray-700">
+              <option value="fr">Français</option>
+            </select>
           </div>
         </div>
         <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24">
