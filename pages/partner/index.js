@@ -12,30 +12,36 @@ const index = () => {
   return (
     <>
       <Head>
-        <title>Devenez partenaire Avanue-immo - Avenue-Immo Partner</title>
+        <title>
+          Partenariat Avenue-Immo : Rejoignez Notre Réseau d'Experts Immobiliers
+        </title>
         <meta
           name="description"
-          content="Félicitations pour avoir franchi la première étape de votre candidature avec Avenue-Immo. Découvrez les prochaines étapes pour devenir notre partenaire exclusif dans votre secteur."
+          content="Devenez partenaire d'Avenue-Immo et intégrez un réseau d'experts en immobilier. Découvrez les avantages exclusifs et les opportunités de croissance professionnelle."
         />
         <meta
           name="keywords"
-          content="résultat de candidature, partenariat Avenue-Immo, entretien partenariat, opportunités de partenariat, devenir partenaire"
+          content="partenariat immobilier, réseau d'experts immobiliers, opportunités professionnelles immobilier, Avenue-Immo partenaires, collaboration immobilière"
         />
         <meta
           property="og:title"
-          content="Résultat de Candidature - Avenue-Immo Partner"
+          content="Partenariat Avenue-Immo : Élargissez Votre Horizon Professionnel"
         />
         <meta
           property="og:description"
-          content="Félicitations ! Votre candidature a été reçue avec succès. Préparez-vous pour l'entretien personnalisé et saisissez l'occasion de devenir un partenaire exclusif d'Avenue-Immo."
+          content="Rejoignez le réseau de partenaires d'Avenue-Immo et bénéficiez d'une collaboration enrichissante. Ensemble, transformons le marché immobilier."
         />
-        <meta property="og:image" content="URL_DE_VOTRE_IMAGE_EN_ÉVIDENCE" />
+        <meta
+          property="og:image"
+          content="URL_DE_VOTRE_IMAGE_POUR_PARTENARIAT"
+        />
         <meta
           property="og:url"
           content="https://www.avenue-immo.com/partner/"
         />
         <link rel="canonical" href="https://www.avenue-immo.com/partner/" />
       </Head>
+
       <Header />
       <main>
         <Hero />
