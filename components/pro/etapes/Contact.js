@@ -45,8 +45,8 @@ const Contact = () => {
     }
   }, [firstName, lastName, email, phone, dispatch]);
   return (
-    <>
-      <h1 className="text-center lg:text-4xl text-2xl lg:w-11/12 mt-10 lg:mt-3 text-gray-700">
+    <div className="flex flex-col">
+      <h1 className="text-center lg:text-4xl text-2xl lg:w-11/12 mt-10 lg:mt-3 text-gray-700 px-0 py-0">
         Contact
       </h1>
       <form className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 mt-5">
@@ -127,7 +127,7 @@ const Contact = () => {
           </div>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 
