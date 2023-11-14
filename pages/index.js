@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import EstimationLayout from "../components/layout/EstimationLayout";
 import Estimation from "../components/estimation/Estimation";
 import Header from "../components/header/Header";
@@ -8,7 +9,6 @@ import Faq from "../components/faqs/Faq";
 import Footer from "../components/footer/Footer";
 import ServiceBanner from "../components/banner/ServiceBanner";
 import CTABanner from "../components/banner/CTABanner";
-import Head from "next/head";
 
 const Accueil = () => {
   return (
