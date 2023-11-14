@@ -328,3 +328,16 @@ export const storeFirebaseError = async (error, pageName) => {
     console.error("Échec de stockage de l'erreur: ", storeError);
   }
 };
+
+// Fonction pour ajouter un nouveau contact dans la base de données Firebase
+export const addNewContact = async (contactData) => {
+  const contactsRef = ref(db, "contacts"); // Référence au dossier 'contacts' dans la base de données
+
+  try {
+    const newContactRef = push(contactsRef); // Crée une nouvelle référence avec un ID unique généré par Firebase
+    await set(newContactRef, contactData); // Enregistre les données de contact à cette nouvelle référence
+    console.log(`New contact added successfully.`);
+  } catch (error) {
+    console.error("Failed to add new contact: ", error);
+  }
+};
