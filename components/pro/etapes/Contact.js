@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 
 const Contact = () => {
-  const namePattern = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
+  const namePattern = /^\s*[a-zA-Z]+(?:\s[a-zA-Z]+)*\s*$/;
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const phonePattern = /^(0[1-9])([ _.-]?\d{2}){4}$/;
 
