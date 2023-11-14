@@ -28,7 +28,7 @@ const navigation = {
     { name: "Investir", href: "/" },
   ],
   Utiles: [
-    { name: "Espace press", href: "/" },
+    { name: "Espace presse", href: "/" },
     { name: "Contact", href: "/contact" },
   ],
 };
