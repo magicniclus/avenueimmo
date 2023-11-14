@@ -9,8 +9,8 @@ const stats = [
   { id: 2, name: "Marge sur contact", value: "100%" },
   {
     id: 3,
-    name: "Potentiel d'Estimations Mensuelles",
-    value: "+15/jour",
+    name: "Potentiel d'Estimations journalières",
+    value: "+15",
   },
   {
     id: 4,
