@@ -66,7 +66,7 @@ export default function Header() {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Avenue-immo</span>
               <img
-                className="h-auto w-20"
+                className="h-auto w-4"
                 src="/logos/logo.png"
                 alt="avenue-immo"
               />
