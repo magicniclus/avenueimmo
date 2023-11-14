@@ -22,7 +22,7 @@ const SelectWithIcon = (props) => {
       onClick={() => setIsOpen(!isOpen)}
     >
       <div
-        className="ax-w-[500px] w-[80%] sm:w-[90%] border px-4 py-3 rounded-l-md font-light text-sm cursor-pointer text-gray-700"
+        className="max-w-[500px] w-[80%] sm:w-[90%] border px-4 py-3 rounded-l-md font-light text-sm cursor-pointer text-gray-700"
         style={{ borderColor: "#3b82f6" }}
       >
         {selectedValue}
