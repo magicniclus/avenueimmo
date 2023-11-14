@@ -21,7 +21,7 @@ const navigation = {
     { name: "Nos partenaires", href: "/partner" },
   ],
   services: [
-    { name: "Estimation en ligne", href: "/estimation" },
+    { name: "Estimation en ligne", href: "/" },
     { name: "Vendre", href: "/" },
     { name: "Acheter", href: "/" },
     { name: "Louer", href: "/" },
@@ -77,7 +77,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-20 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="grid grid-cols-1 gap-8 xl:col-span-2">
-            <div className="md:grid md:grid-cols-4 md:gap-8">
+            <div className="md:grid md:grid-cols-4 md:gap-8 max-w-[85%]">
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-white">
                   Services
@@ -148,7 +148,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="mt-10 xl:mt-0">
+          <div className="mt-10 xl:mt-0 max-w-[350px]">
             <h3 className="text-sm font-semibold leading-6 text-white">
               Sousvrivez à notre New's Letter
             </h3>
@@ -200,7 +200,7 @@ export default function Footer() {
             )}
           </div>
         </div>
-        <div className="py-10 flex justify-between">
+        <div className="py-10 flex md:flex-row flex-col justify-between">
           <a
             className="text-sm font-semibold leading-6 text-white"
             href="mailto:contact@avenue-immo.com"
@@ -212,7 +212,7 @@ export default function Footer() {
               htmlFor="language"
               className="text-sm font-semibold leading-6 text-white"
             >
-              Language :
+              Langue :
             </label>
             <select className="max-w-[150px] mt-3 border px-4 py-1 rounded-md font-light text-sm cursor-pointer text-gray-700">
               <option value="fr">Français</option>
