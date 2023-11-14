@@ -11,7 +11,7 @@ import {
 const actions = [
   {
     title: "Réactivité garantie",
-    text: "Tous les prospects sont envoyé dans la minute",
+    text: "Recevez instantanément par email tous les prospects pour maximiser vos opportunités de conversion.",
     href: "#",
     icon: ClockIcon,
     iconForeground: "text-teal-700",
@@ -19,7 +19,7 @@ const actions = [
   },
   {
     title: "Qualité certifiée",
-    text: "Tous les prospects sont qualifiés par nos soins",
+    text: "Nous qualifions chaque prospect avec un processus rigoureux incluant une vérification téléphonique pour assurer leur pertinence.",
     href: "#",
     icon: CheckBadgeIcon,
     iconForeground: "text-purple-700",
@@ -27,15 +27,15 @@ const actions = [
   },
   {
     title: "Partenaires 100% exclusifs",
-    text: "Un seul partenaire par secteur",
+    text: "Bénéficiez d'une exclusivité totale dans votre secteur. Chaque prospect vous est uniquement dédié, soulignant l'importance que nous accordons à la sélection de nos partenaires.",
     href: "#",
     icon: UsersIcon,
     iconForeground: "text-sky-700",
     iconBackground: "bg-sky-50",
   },
   {
-    title: "Contact à prix coutant",
-    text: "Uniquement les frais publicitaires",
+    title: "Contact à prix coûtant et maîtrise totale du budget",
+    text: "Accédez et gérez votre compte publicitaire en temps réel, ajustez vos dépenses selon vos besoins et payez uniquement le coût réel des prospects.",
     href: "#",
     icon: BanknotesIcon,
     iconForeground: "text-yellow-700",
