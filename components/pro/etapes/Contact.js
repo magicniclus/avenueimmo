@@ -5,9 +5,9 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 
 const Contact = () => {
-  const namePattern = /^[a-zA-Z]{2,}$/;
+  const namePattern = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phonePattern = /^(0[1-9])(?:[ _.-]?(\d{2})){4}$/;
+  const phonePattern = /^(0[1-9])([ _.-]?\d{2}){4}$/;
 
   const dispatch = useDispatch();
 
@@ -15,8 +15,6 @@ const Contact = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-
-  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     if (
@@ -31,9 +29,21 @@ const Contact = () => {
           informationsPersonnelles: { firstName, lastName, email, phone },
         },
       });
+    } else {
+      console.log(
+        namePattern.test(firstName),
+        namePattern.test(lastName),
+        emailPattern.test(email),
+        phonePattern.test(phone)
+      );
+      dispatch({
+        type: "SET_PRO_INFORMATION",
+        payload: {
+          informationsPersonnelles: null,
+        },
+      });
     }
-  }, [firstName, lastName, email, phone]);
-
+  }, [firstName, lastName, email, phone, dispatch]);
   return (
     <>
       <h1 className="text-center lg:text-4xl text-2xl lg:w-11/12 mt-10 lg:mt-3 text-gray-700">
@@ -55,9 +65,7 @@ const Contact = () => {
               autoComplete="given-name"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              className={`w-full px-4 py-3 rounded-md font-light text-sm border ${
-                errors.firstName ? "border-red-400" : "border-gray-200"
-              }`}
+              className={`w-full px-4 py-3 rounded-md font-light text-normal border ${"border-gray-200"}`}
             />
           </div>
         </div>
@@ -76,9 +84,7 @@ const Contact = () => {
               autoComplete="family-name"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
-              className={`w-full px-4 py-3 rounded-md font-light text-sm border ${
-                errors.lastName ? "border-red-400" : "border-gray-200"
-              }`}
+              className={`w-full px-4 py-3 rounded-md font-light text-normal border ${"border-gray-200"}`}
             />
           </div>
         </div>
@@ -97,9 +103,7 @@ const Contact = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               autoComplete="email"
-              className={`w-full px-4 py-3 rounded-md font-light text-sm border ${
-                errors.email ? "border-red-400" : "border-gray-200"
-              }`}
+              className={`w-full px-4 py-3 rounded-md font-light text-normal border ${"border-gray-200"}`}
             />
           </div>
         </div>
@@ -118,9 +122,7 @@ const Contact = () => {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               autoComplete="tel"
-              className={`w-full px-4 py-3 rounded-md font-light text-sm border ${
-                errors.phone ? "border-red-400" : "border-gray-200"
-              }`}
+              className={`w-full px-4 py-3 rounded-md font-light text-normal border ${"border-gray-200"}`}
             />
           </div>
         </div>
