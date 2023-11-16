@@ -50,7 +50,7 @@ const index = () => {
         <meta property="og:url" content="https://www.avenue-immo.com/contact" />
         <link rel="canonical" href="https://www.avenue-immo.com/contact" />
       </Head>
-
+      <Header />
       <main className="w-full flex justify-center items-center flex-col min-h-[calc(100vh-94px)]">
         <h1 className="text-2xl font-bold text-blue-500">Contactez-nous</h1>
         <form action="#" method="POST" className="mt-20">
