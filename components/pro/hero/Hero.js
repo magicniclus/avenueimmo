@@ -18,8 +18,7 @@ const Hero = () => {
               Rejoignez Avenue-Immo et découvrez une nouvelle dimension dans
               votre carrière immobilière. En tant que partenaire exclusif dans
               votre secteur, vous aurez l'opportunité unique de façonner
-              l'avenir de l'immobilier local avec nous. Ensemble, explorons les
-              possibilités.
+              l'avenir de l'immobilier local avec nous.
             </p>
 
             <div className="mt-10 flex items-center gap-x-6">
