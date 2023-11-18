@@ -3,13 +3,13 @@ import React from "react";
 const stats = [
   {
     id: 1,
-    name: "Estimations Immobilières Accomplies Annuellement",
+    name: "Estimations Immobilières réalisées chaque année",
     value: "Plus de 8,000",
   },
   { id: 2, name: "Marge sur contact", value: "100%" },
   {
     id: 3,
-    name: "Potentiel d'Estimations journalières",
+    name: "Estimations par jour",
     value: "+15",
   },
   {
