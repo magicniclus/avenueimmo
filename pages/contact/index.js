@@ -13,7 +13,8 @@ const index = () => {
     message: "",
   });
 
-  useEffect(() => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (
       information.firstName !== "" &&
       information.lastName !== "" &&
@@ -21,8 +22,9 @@ const index = () => {
       information.phoneNumber !== ""
     ) {
       addNewContact(information);
+      alert("Votre message a bien été envoyé !");
     } else null;
-  }, [information]);
+  };
 
   return (
     <>
@@ -53,7 +55,7 @@ const index = () => {
       <Header />
       <main className="w-full flex justify-center items-center flex-col min-h-[calc(100vh-94px)]">
         <h1 className="text-2xl font-bold text-blue-500">Contactez-nous</h1>
-        <form action="#" method="POST" className="mt-20">
+        <form method="POST" onSubmit={handleSubmit} className="mt-20">
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
@@ -159,6 +161,12 @@ const index = () => {
                     rows={4}
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
                     defaultValue={""}
+                    onChange={(e) =>
+                      setInformation({
+                        ...information,
+                        message: e.target.value,
+                      })
+                    }
                   />
                 </div>
               </div>
@@ -172,7 +180,7 @@ const index = () => {
               </button>
             </div>
           </div>
-        </>
+        </form>
       </main>
       <Footer />
     </>
@@ -180,4 +188,3 @@ const index = () => {
 };
 
 export default index;
-
