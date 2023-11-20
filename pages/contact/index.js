@@ -172,7 +172,7 @@ const index = () => {
               </button>
             </div>
           </div>
-        </form>
+        </>
       </main>
       <Footer />
     </>
@@ -180,3 +180,4 @@ const index = () => {
 };
 
 export default index;
+
