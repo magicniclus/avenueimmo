@@ -136,7 +136,9 @@ const Step = () => {
 
       case 7:
         if (type === "Appartement") {
-          return !etages || !niveaux;
+          return (
+            !etages || niveaux == null || niveaux < 0 || niveaux === undefined
+          );
         }
         return !etages;
 
