@@ -43,7 +43,10 @@ const EtapeEstimationContainer = () => {
         ? {
             name: "Niveaux / Étages",
             done:
-              clientInformation?.etages && clientInformation?.niveaux
+              clientInformation?.etages &&
+              clientInformation?.niveaux != null &&
+              clientInformation?.niveaux != undefined &&
+              clientInformation?.niveaux >= 0
                 ? true
                 : false,
             select: stepInProgress === 7 ? true : false,
